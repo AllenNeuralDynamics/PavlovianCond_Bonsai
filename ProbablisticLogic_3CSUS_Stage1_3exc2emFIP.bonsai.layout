@@ -1437,8 +1437,8 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>1483</X>
-          <Y>741</Y>
+          <X>1289</X>
+          <Y>722</Y>
         </Location>
         <Size>
           <Width>433</Width>
@@ -2669,11 +2669,11 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>1483</X>
-          <Y>557</Y>
+          <X>1293</X>
+          <Y>537</Y>
         </Location>
         <Size>
-          <Width>433</Width>
+          <Width>430</Width>
           <Height>190</Height>
         </Size>
         <WindowState>Normal</WindowState>
@@ -3097,8 +3097,8 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>130</X>
-          <Y>130</Y>
+          <X>208</X>
+          <Y>208</Y>
         </Location>
         <Size>
           <Width>336</Width>
@@ -3279,12 +3279,12 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>808</X>
-          <Y>245</Y>
+          <X>211</X>
+          <Y>105</Y>
         </Location>
         <Size>
-          <Width>336</Width>
-          <Height>279</Height>
+          <Width>1097</Width>
+          <Height>909</Height>
         </Size>
         <WindowState>Normal</WindowState>
         <VisualizerTypeName>Bonsai.Design.Visualizers.TableLayoutPanelVisualizer</VisualizerTypeName>
@@ -5440,8 +5440,8 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>1281</X>
-          <Y>85</Y>
+          <X>1292</X>
+          <Y>28</Y>
         </Location>
         <Size>
           <Width>431</Width>

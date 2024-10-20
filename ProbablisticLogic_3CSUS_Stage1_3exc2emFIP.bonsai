@@ -54,7 +54,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:CreateDiscreteUniform">
-                <p1:Lower>1</p1:Lower>
+                <p1:Lower>21</p1:Lower>
                 <p1:Upper>30</p1:Upper>
               </Combinator>
             </Expression>
@@ -185,7 +185,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_Reward_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_Reward_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -278,7 +278,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_RewardB_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_RewardB_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -337,7 +337,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_CS1_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_CS1_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -396,7 +396,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_CS2_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_CS2_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -455,7 +455,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_CS3_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_CS3_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -694,7 +694,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TrialN_TrialType_ITI_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TrialN_TrialType_ITI_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -763,7 +763,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_ManualCS1_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_ManualCS1_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -802,7 +802,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_ManualCS2_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_ManualCS2_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -841,7 +841,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_ManualCS3_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_ManualCS3_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -880,7 +880,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_ManualReward_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_ManualReward_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -919,7 +919,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_ManualRewardB_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_ManualRewardB_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1021,7 +1021,7 @@ Item5 as ITI_s)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="harp:MessageWriter">
-                <harp:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/HarpMessages_.bin</harp:FileName>
+                <harp:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/HarpMessages_.bin</harp:FileName>
                 <harp:Suffix>Timestamp</harp:Suffix>
                 <harp:Buffered>true</harp:Buffered>
                 <harp:Overwrite>false</harp:Overwrite>
@@ -1082,7 +1082,7 @@ Item5 as ITI_s)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="harp:MessageWriter">
-                <harp:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/SoundCardMessages_.bin</harp:FileName>
+                <harp:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/SoundCardMessages_.bin</harp:FileName>
                 <harp:Suffix>Timestamp</harp:Suffix>
                 <harp:Buffered>true</harp:Buffered>
                 <harp:Overwrite>false</harp:Overwrite>
@@ -1235,7 +1235,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior/TS_Lick_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior/TS_Lick_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1553,7 +1553,7 @@ Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="Add">
               <Operand xsi:type="DoubleProperty">
-                <Value>5</Value>
+                <Value>15</Value>
               </Operand>
             </Expression>
             <Expression xsi:type="scr:ExpressionTransform">
@@ -1569,7 +1569,7 @@ Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Timer">
-                <rx:DueTime>PT14.791S</rx:DueTime>
+                <rx:DueTime>PT16.024S</rx:DueTime>
                 <rx:Period>PT0S</rx:Period>
               </Combinator>
             </Expression>
@@ -2667,7 +2667,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/fib/FIP_DataG_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/fib/FIP_DataG_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -2687,7 +2687,7 @@ Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="dsp:MatrixWriter">
-                <dsp:Path>C:\behavior_data\428-9-A\test\2024_08_07\/fib/FIP_RawG_.bin</dsp:Path>
+                <dsp:Path>C:\behavior_data\428-9-A\test\2024_09_27\/fib/FIP_RawG_.bin</dsp:Path>
                 <dsp:Suffix>Timestamp</dsp:Suffix>
                 <dsp:Overwrite>false</dsp:Overwrite>
                 <dsp:Layout>ColumnMajor</dsp:Layout>
@@ -3392,7 +3392,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/fib/FIP_DataIso_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/fib/FIP_DataIso_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -3412,7 +3412,7 @@ Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="dsp:MatrixWriter">
-                <dsp:Path>C:\behavior_data\428-9-A\test\2024_08_07\/fib/FIP_RawIso_.bin</dsp:Path>
+                <dsp:Path>C:\behavior_data\428-9-A\test\2024_09_27\/fib/FIP_RawIso_.bin</dsp:Path>
                 <dsp:Suffix>Timestamp</dsp:Suffix>
                 <dsp:Overwrite>false</dsp:Overwrite>
                 <dsp:Layout>ColumnMajor</dsp:Layout>
@@ -4123,7 +4123,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/fib/FIP_DataR_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/fib/FIP_DataR_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -4143,7 +4143,7 @@ Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="dsp:MatrixWriter">
-                <dsp:Path>C:\behavior_data\428-9-A\test\2024_08_07\/fib/FIP_RawR_.bin</dsp:Path>
+                <dsp:Path>C:\behavior_data\428-9-A\test\2024_09_27\/fib/FIP_RawR_.bin</dsp:Path>
                 <dsp:Suffix>Timestamp</dsp:Suffix>
                 <dsp:Overwrite>false</dsp:Overwrite>
                 <dsp:Layout>ColumnMajor</dsp:Layout>
@@ -4326,7 +4326,7 @@ Item2 as HarpTS)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior-videos/side_camera_right.csv</io:FileName>
+                    <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior-videos/side_camera_right.csv</io:FileName>
                     <io:Append>false</io:Append>
                     <io:Overwrite>true</io:Overwrite>
                     <io:Suffix>Timestamp</io:Suffix>
@@ -4412,7 +4412,7 @@ Item2 as HarpTS)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="cv:VideoWriter">
-                      <cv:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior-videos/side_camera_right.avi</cv:FileName>
+                      <cv:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior-videos/side_camera_right.avi</cv:FileName>
                       <cv:Suffix>Timestamp</cv:Suffix>
                       <cv:Buffered>true</cv:Buffered>
                       <cv:Overwrite>false</cv:Overwrite>
@@ -4523,7 +4523,7 @@ Item2 as HarpTS)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior-videos/bottom_camera.csv</io:FileName>
+                    <io:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior-videos/bottom_camera.csv</io:FileName>
                     <io:Append>false</io:Append>
                     <io:Overwrite>true</io:Overwrite>
                     <io:Suffix>Timestamp</io:Suffix>
@@ -4547,7 +4547,7 @@ Item2 as HarpTS)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="cv:VideoWriter">
-                      <cv:FileName>C:\behavior_data\428-9-A\test\2024_08_07\/behavior-videos/bottom_camera.avi</cv:FileName>
+                      <cv:FileName>C:\behavior_data\428-9-A\test\2024_09_27\/behavior-videos/bottom_camera.avi</cv:FileName>
                       <cv:Suffix>Timestamp</cv:Suffix>
                       <cv:Buffered>true</cv:Buffered>
                       <cv:Overwrite>false</cv:Overwrite>
@@ -4720,7 +4720,7 @@ Item2 as HarpTS)</scr:Expression>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="StringProperty">
-          <Value>734811\2024_10_01</Value>
+          <Value>734809\2024_09_27</Value>
         </Combinator>
       </Expression>
       <Expression xsi:type="Format">
