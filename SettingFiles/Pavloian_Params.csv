@@ -1,0 +1,17 @@
+CreateExponential_Rate,0.2
+CreateDiscreteUniform_Lower,1
+CreateDiscreteUniform_Upper,30
+minITI,3
+Delay,5
+PlaySound_CS1,11
+PlaySound_CS2,12
+PlaySound_CS3,13
+PlaySound_CS4,14
+AttenuationPayload_CS1,200
+AttenuationPayload_CS2,200
+AttenuationPayload_CS3,200
+AttenuationPayload_CS4,200
+RewardDelay,2
+RewardSize,24
+RewardSizeBig,40
+AirpuffDuration,200
