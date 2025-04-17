@@ -24,20 +24,25 @@
     <Nodes>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="StringProperty">
-          <Value>000009</Value>
+          <Value>000000</Value>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="StringProperty">
-          <Value>2025_04_16</Value>
+          <Value>2025_04_xx</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="StringProperty">
+          <Value>428-9-X</Value>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="rx:Zip" />
       </Expression>
       <Expression xsi:type="Format">
-        <Format>C:\behavior_data\428-9-D\{0}\{1}\</Format>
-        <Selector>Item1,Item2</Selector>
+        <Format>C:\behavior_data\{2}\{0}\{1}\</Format>
+        <Selector>Item1,Item2,Item3</Selector>
       </Expression>
       <Expression xsi:type="rx:BehaviorSubject">
         <Name>RootPath</Name>
@@ -76,7 +81,7 @@
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/PavParams_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/PavParams_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -318,7 +323,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_Reward_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_Reward_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -405,7 +410,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_RewardB_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_RewardB_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -507,7 +512,7 @@ Item1 as SoftwareTS,
 Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_CS1_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_CS1_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -609,7 +614,7 @@ Item1 as SoftwareTS,
 Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_CS2_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_CS2_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -711,7 +716,7 @@ Item1 as SoftwareTS,
 Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_CS3_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_CS3_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -813,7 +818,7 @@ Item1 as SoftwareTS,
 Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_CS4_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_CS4_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -919,7 +924,7 @@ Item1 as SoftwareTS,
 Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_Airpuff_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_Airpuff_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1229,7 +1234,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TrialN_TrialType_ITI_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TrialN_TrialType_ITI_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1298,7 +1303,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_ManualCS1_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_ManualCS1_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1337,7 +1342,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_ManualCS2_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_ManualCS2_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1376,7 +1381,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_ManualCS3_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_ManualCS3_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1415,7 +1420,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_ManualCS4_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_ManualCS4_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1454,7 +1459,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_ManualReward_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_ManualReward_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1493,7 +1498,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_ManualRewardB_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_ManualRewardB_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1532,7 +1537,7 @@ Item5 as ITI_s)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_ManualAirpuff_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_ManualAirpuff_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1650,7 +1655,7 @@ Item5 as ITI_s)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="harp:MessageWriter">
-                <harp:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/HarpMessages_.bin</harp:FileName>
+                <harp:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/HarpMessages_.bin</harp:FileName>
                 <harp:Suffix>Timestamp</harp:Suffix>
                 <harp:Buffered>true</harp:Buffered>
                 <harp:Overwrite>false</harp:Overwrite>
@@ -1711,7 +1716,7 @@ Item5 as ITI_s)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="harp:MessageWriter">
-                <harp:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/SoundCardMessages_.bin</harp:FileName>
+                <harp:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/SoundCardMessages_.bin</harp:FileName>
                 <harp:Suffix>Timestamp</harp:Suffix>
                 <harp:Buffered>true</harp:Buffered>
                 <harp:Overwrite>false</harp:Overwrite>
@@ -1855,7 +1860,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_Lick_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_Lick_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -1932,7 +1937,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior/TS_FIP_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior/TS_FIP_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -2313,7 +2318,7 @@ Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Timer">
-                <rx:DueTime>PT9.158S</rx:DueTime>
+                <rx:DueTime>PT9.559S</rx:DueTime>
                 <rx:Period>PT0S</rx:Period>
               </Combinator>
             </Expression>
@@ -3190,7 +3195,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/FIP_DataG_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/FIP_DataG_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -3210,7 +3215,7 @@ Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="dsp:MatrixWriter">
-                <dsp:Path>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/FIP_RawG_.bin</dsp:Path>
+                <dsp:Path>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/FIP_RawG_.bin</dsp:Path>
                 <dsp:Suffix>Timestamp</dsp:Suffix>
                 <dsp:Overwrite>false</dsp:Overwrite>
                 <dsp:Layout>ColumnMajor</dsp:Layout>
@@ -3427,7 +3432,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/FIP_DataIso_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/FIP_DataIso_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -3447,7 +3452,7 @@ Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="dsp:MatrixWriter">
-                <dsp:Path>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/FIP_RawIso_.bin</dsp:Path>
+                <dsp:Path>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/FIP_RawIso_.bin</dsp:Path>
                 <dsp:Suffix>Timestamp</dsp:Suffix>
                 <dsp:Overwrite>false</dsp:Overwrite>
                 <dsp:Layout>ColumnMajor</dsp:Layout>
@@ -3457,7 +3462,18 @@ Item2 as HarpTS)</scr:Expression>
               <Selector>ChunkData</Selector>
             </Expression>
             <Expression xsi:type="MemberSelector">
+              <Selector>FrameID</Selector>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
               <Selector>Timestamp</Selector>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Zip" />
+            </Expression>
+            <Expression xsi:type="scr:ExpressionTransform">
+              <scr:Expression>New(
+Item1 as Flir_FrameID,
+Item2 as FlirTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
               <Name>RootPath</Name>
@@ -3472,11 +3488,11 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/TS_FLIR_G-Iso_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/TS_FLIR_G-Iso_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
-              <io:IncludeHeader>false</io:IncludeHeader>
+              <io:IncludeHeader>true</io:IncludeHeader>
             </Expression>
             <Expression xsi:type="io:CsvReader">
               <io:FileName>C:\Users\svc_aind_behavior\Documents\FIPSettings\CameraSerial_Red.csv</io:FileName>
@@ -4207,7 +4223,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/FIP_DataR_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/FIP_DataR_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -4227,14 +4243,28 @@ Item2 as HarpTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="dsp:MatrixWriter">
-                <dsp:Path>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/FIP_RawR_.bin</dsp:Path>
+                <dsp:Path>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/FIP_RawR_.bin</dsp:Path>
                 <dsp:Suffix>Timestamp</dsp:Suffix>
                 <dsp:Overwrite>false</dsp:Overwrite>
                 <dsp:Layout>ColumnMajor</dsp:Layout>
               </Combinator>
             </Expression>
             <Expression xsi:type="MemberSelector">
-              <Selector>ChunkData.Timestamp</Selector>
+              <Selector>ChunkData</Selector>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>FrameID</Selector>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Timestamp</Selector>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Zip" />
+            </Expression>
+            <Expression xsi:type="scr:ExpressionTransform">
+              <scr:Expression>New(
+Item1 as Flir_FrameID,
+Item2 as FlirTS)</scr:Expression>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
               <Name>RootPath</Name>
@@ -4249,11 +4279,11 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/TS_FLIR_R_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/TS_FLIR_R_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
-              <io:IncludeHeader>false</io:IncludeHeader>
+              <io:IncludeHeader>true</io:IncludeHeader>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
               <Name>Green</Name>
@@ -5980,7 +6010,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/FIP_ROIsG-Iso_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/FIP_ROIsG-Iso_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -6096,7 +6126,7 @@ Item2 as HarpTS)</scr:Expression>
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/fib/FIP_ROIsR_.csv</io:FileName>
+              <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/fib/FIP_ROIsR_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -6209,94 +6239,103 @@ Item2 as HarpTS)</scr:Expression>
             <Edge From="68" To="69" Label="Source1" />
             <Edge From="69" To="70" Label="Source2" />
             <Edge From="71" To="72" Label="Source1" />
-            <Edge From="72" To="76" Label="Source1" />
-            <Edge From="73" To="74" Label="Source1" />
+            <Edge From="71" To="73" Label="Source1" />
+            <Edge From="72" To="74" Label="Source1" />
+            <Edge From="73" To="74" Label="Source2" />
             <Edge From="74" To="75" Label="Source1" />
-            <Edge From="75" To="76" Label="Source2" />
+            <Edge From="75" To="79" Label="Source1" />
+            <Edge From="76" To="77" Label="Source1" />
             <Edge From="77" To="78" Label="Source1" />
-            <Edge From="78" To="79" Label="Source1" />
-            <Edge From="79" To="80" Label="Source1" />
-            <Edge From="79" To="112" Label="Source1" />
+            <Edge From="78" To="79" Label="Source2" />
             <Edge From="80" To="81" Label="Source1" />
-            <Edge From="80" To="83" Label="Source1" />
             <Edge From="81" To="82" Label="Source1" />
-            <Edge From="82" To="100" Label="Source1" />
+            <Edge From="82" To="83" Label="Source1" />
+            <Edge From="82" To="115" Label="Source1" />
             <Edge From="83" To="84" Label="Source1" />
-            <Edge From="84" To="87" Label="Source1" />
-            <Edge From="84" To="111" Label="Source1" />
-            <Edge From="85" To="86" Label="Source1" />
-            <Edge From="86" To="87" Label="Source2" />
-            <Edge From="87" To="88" Label="Source1" />
-            <Edge From="87" To="91" Label="Source1" />
-            <Edge From="87" To="94" Label="Source1" />
-            <Edge From="87" To="96" Label="Source1" />
-            <Edge From="87" To="98" Label="Source1" />
+            <Edge From="83" To="86" Label="Source1" />
+            <Edge From="84" To="85" Label="Source1" />
+            <Edge From="85" To="103" Label="Source1" />
+            <Edge From="86" To="87" Label="Source1" />
+            <Edge From="87" To="90" Label="Source1" />
+            <Edge From="87" To="114" Label="Source1" />
             <Edge From="88" To="89" Label="Source1" />
-            <Edge From="89" To="90" Label="Source1" />
-            <Edge From="90" To="100" Label="Source2" />
+            <Edge From="89" To="90" Label="Source2" />
+            <Edge From="90" To="91" Label="Source1" />
+            <Edge From="90" To="94" Label="Source1" />
+            <Edge From="90" To="97" Label="Source1" />
+            <Edge From="90" To="99" Label="Source1" />
+            <Edge From="90" To="101" Label="Source1" />
             <Edge From="91" To="92" Label="Source1" />
             <Edge From="92" To="93" Label="Source1" />
-            <Edge From="93" To="100" Label="Source3" />
+            <Edge From="93" To="103" Label="Source2" />
             <Edge From="94" To="95" Label="Source1" />
-            <Edge From="95" To="100" Label="Source4" />
-            <Edge From="96" To="97" Label="Source1" />
-            <Edge From="97" To="100" Label="Source5" />
-            <Edge From="98" To="99" Label="Source1" />
-            <Edge From="99" To="100" Label="Source6" />
-            <Edge From="100" To="102" Label="Source1" />
-            <Edge From="101" To="102" Label="Source2" />
-            <Edge From="102" To="103" Label="Source1" />
-            <Edge From="103" To="107" Label="Source1" />
-            <Edge From="104" To="105" Label="Source1" />
+            <Edge From="95" To="96" Label="Source1" />
+            <Edge From="96" To="103" Label="Source3" />
+            <Edge From="97" To="98" Label="Source1" />
+            <Edge From="98" To="103" Label="Source4" />
+            <Edge From="99" To="100" Label="Source1" />
+            <Edge From="100" To="103" Label="Source5" />
+            <Edge From="101" To="102" Label="Source1" />
+            <Edge From="102" To="103" Label="Source6" />
+            <Edge From="103" To="105" Label="Source1" />
+            <Edge From="104" To="105" Label="Source2" />
             <Edge From="105" To="106" Label="Source1" />
-            <Edge From="106" To="107" Label="Source2" />
+            <Edge From="106" To="110" Label="Source1" />
+            <Edge From="107" To="108" Label="Source1" />
             <Edge From="108" To="109" Label="Source1" />
-            <Edge From="109" To="110" Label="Source1" />
-            <Edge From="110" To="111" Label="Source2" />
-            <Edge From="112" To="116" Label="Source1" />
-            <Edge From="113" To="114" Label="Source1" />
-            <Edge From="114" To="115" Label="Source1" />
-            <Edge From="115" To="116" Label="Source2" />
-            <Edge From="117" To="118" Label="Source1" />
-            <Edge From="118" To="120" Label="Source1" />
-            <Edge From="119" To="120" Label="Source2" />
+            <Edge From="109" To="110" Label="Source2" />
+            <Edge From="111" To="112" Label="Source1" />
+            <Edge From="112" To="113" Label="Source1" />
+            <Edge From="113" To="114" Label="Source2" />
+            <Edge From="115" To="116" Label="Source1" />
+            <Edge From="115" To="117" Label="Source1" />
+            <Edge From="116" To="118" Label="Source1" />
+            <Edge From="117" To="118" Label="Source2" />
+            <Edge From="118" To="119" Label="Source1" />
+            <Edge From="119" To="123" Label="Source1" />
             <Edge From="120" To="121" Label="Source1" />
             <Edge From="121" To="122" Label="Source1" />
-            <Edge From="122" To="123" Label="Source1" />
-            <Edge From="123" To="124" Label="Source1" />
-            <Edge From="125" To="126" Label="Source1" />
-            <Edge From="126" To="128" Label="Source1" />
-            <Edge From="127" To="128" Label="Source2" />
+            <Edge From="122" To="123" Label="Source2" />
+            <Edge From="124" To="125" Label="Source1" />
+            <Edge From="125" To="127" Label="Source1" />
+            <Edge From="126" To="127" Label="Source2" />
+            <Edge From="127" To="128" Label="Source1" />
             <Edge From="128" To="129" Label="Source1" />
             <Edge From="129" To="130" Label="Source1" />
             <Edge From="130" To="131" Label="Source1" />
-            <Edge From="131" To="132" Label="Source1" />
-            <Edge From="133" To="134" Label="Source1" />
-            <Edge From="134" To="135" Label="Source1" />
+            <Edge From="132" To="133" Label="Source1" />
+            <Edge From="133" To="135" Label="Source1" />
+            <Edge From="134" To="135" Label="Source2" />
             <Edge From="135" To="136" Label="Source1" />
             <Edge From="136" To="137" Label="Source1" />
             <Edge From="137" To="138" Label="Source1" />
             <Edge From="138" To="139" Label="Source1" />
-            <Edge From="139" To="140" Label="Source1" />
+            <Edge From="140" To="141" Label="Source1" />
             <Edge From="141" To="142" Label="Source1" />
             <Edge From="142" To="143" Label="Source1" />
             <Edge From="143" To="144" Label="Source1" />
             <Edge From="144" To="145" Label="Source1" />
             <Edge From="145" To="146" Label="Source1" />
             <Edge From="146" To="147" Label="Source1" />
-            <Edge From="147" To="148" Label="Source1" />
+            <Edge From="148" To="149" Label="Source1" />
+            <Edge From="149" To="150" Label="Source1" />
+            <Edge From="150" To="151" Label="Source1" />
             <Edge From="151" To="152" Label="Source1" />
-            <Edge From="152" To="156" Label="Source1" />
+            <Edge From="152" To="153" Label="Source1" />
             <Edge From="153" To="154" Label="Source1" />
             <Edge From="154" To="155" Label="Source1" />
-            <Edge From="155" To="156" Label="Source2" />
-            <Edge From="156" To="157" Label="Source1" />
             <Edge From="158" To="159" Label="Source1" />
             <Edge From="159" To="163" Label="Source1" />
             <Edge From="160" To="161" Label="Source1" />
             <Edge From="161" To="162" Label="Source1" />
             <Edge From="162" To="163" Label="Source2" />
             <Edge From="163" To="164" Label="Source1" />
+            <Edge From="165" To="166" Label="Source1" />
+            <Edge From="166" To="170" Label="Source1" />
+            <Edge From="167" To="168" Label="Source1" />
+            <Edge From="168" To="169" Label="Source1" />
+            <Edge From="169" To="170" Label="Source2" />
+            <Edge From="170" To="171" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -6368,7 +6407,7 @@ Item2 as HarpTS)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior-videos/side_camera_right.csv</io:FileName>
+                    <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior-videos/side_camera_right.csv</io:FileName>
                     <io:Append>false</io:Append>
                     <io:Overwrite>true</io:Overwrite>
                     <io:Suffix>Timestamp</io:Suffix>
@@ -6454,7 +6493,7 @@ Item2 as HarpTS)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="cv:VideoWriter">
-                      <cv:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior-videos/side_camera_right.avi</cv:FileName>
+                      <cv:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior-videos/side_camera_right.avi</cv:FileName>
                       <cv:Suffix>Timestamp</cv:Suffix>
                       <cv:Buffered>true</cv:Buffered>
                       <cv:Overwrite>false</cv:Overwrite>
@@ -6565,7 +6604,7 @@ Item2 as HarpTS)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior-videos/bottom_camera.csv</io:FileName>
+                    <io:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior-videos/bottom_camera.csv</io:FileName>
                     <io:Append>false</io:Append>
                     <io:Overwrite>true</io:Overwrite>
                     <io:Suffix>Timestamp</io:Suffix>
@@ -6589,7 +6628,7 @@ Item2 as HarpTS)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="cv:VideoWriter">
-                      <cv:FileName>C:\behavior_data\428-9-D\000009\2025_04_16\/behavior-videos/bottom_camera.avi</cv:FileName>
+                      <cv:FileName>C:\behavior_data\428-9-X\000000\2025_04_xx\/behavior-videos/bottom_camera.avi</cv:FileName>
                       <cv:Suffix>Timestamp</cv:Suffix>
                       <cv:Buffered>true</cv:Buffered>
                       <cv:Overwrite>false</cv:Overwrite>
@@ -6762,22 +6801,23 @@ Item2 as HarpTS)</scr:Expression>
       </Expression>
     </Nodes>
     <Edges>
-      <Edge From="0" To="2" Label="Source1" />
-      <Edge From="1" To="2" Label="Source2" />
-      <Edge From="2" To="3" Label="Source1" />
+      <Edge From="0" To="3" Label="Source1" />
+      <Edge From="1" To="3" Label="Source2" />
+      <Edge From="2" To="3" Label="Source3" />
       <Edge From="3" To="4" Label="Source1" />
-      <Edge From="12" To="13" Label="Source1" />
+      <Edge From="4" To="5" Label="Source1" />
       <Edge From="13" To="14" Label="Source1" />
       <Edge From="14" To="15" Label="Source1" />
-      <Edge From="15" To="18" Label="Source1" />
-      <Edge From="16" To="17" Label="Source1" />
-      <Edge From="17" To="18" Label="Source2" />
-      <Edge From="18" To="24" Label="Source1" />
-      <Edge From="19" To="20" Label="Source1" />
+      <Edge From="15" To="16" Label="Source1" />
+      <Edge From="16" To="19" Label="Source1" />
+      <Edge From="17" To="18" Label="Source1" />
+      <Edge From="18" To="19" Label="Source2" />
+      <Edge From="19" To="25" Label="Source1" />
       <Edge From="20" To="21" Label="Source1" />
       <Edge From="21" To="22" Label="Source1" />
       <Edge From="22" To="23" Label="Source1" />
-      <Edge From="23" To="24" Label="Source2" />
+      <Edge From="23" To="24" Label="Source1" />
+      <Edge From="24" To="25" Label="Source2" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
