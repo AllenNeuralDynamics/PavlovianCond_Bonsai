@@ -53,7 +53,7 @@ The trial structure file is organized as shown below.
 
 <img width="373" alt="image" src="https://github.com/user-attachments/assets/23aeb29a-5e9f-432c-b21d-8880c4fe1f77" />
 
-`TrialType` is corresponding to:
+`TrialType` values correspond to0:
 
 | TrialType | CS Type | Outcome     |
 |-----------|---------|-------------|
@@ -65,6 +65,13 @@ The trial structure file is organized as shown below.
 | 30        | CS3     | No Reward   |
 | 31–39     | CS4     | Airpuff     |
 | 40        | CS4     | No Airpuff  |
+
+
+TimeStamp csv files (`TS_*`) contains both `Windows softwareTS` and `HarpTS`
+
+<img width="201" alt="image" src="https://github.com/user-attachments/assets/2e07f897-5b61-44dd-8d45-d5f1ad6aad4c" />
+
+
 
 
 
