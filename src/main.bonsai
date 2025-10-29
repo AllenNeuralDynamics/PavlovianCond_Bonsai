@@ -10,9 +10,26 @@
         <Property Name="SessionPath" />
       </Expression>
       <Expression xsi:type="IncludeWorkflow" Path="AllenNeuralDynamics.Core:ReadSchemas.bonsai">
-        <TaskLogicPath />
-        <RigPath />
-        <SessionPath />
+        <TaskLogicPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\local\AindPavlovianConitioningTaskLogic.json</TaskLogicPath>
+        <RigPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\local\AindPavlovianConditioningRig.json</RigPath>
+        <SessionPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\local\AindBehaviorSessionModel.json</SessionPath>
+      </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>RawSessionSchema</Name>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="IntProperty">
+          <Value>0</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>RawTaskLogicSchema</Name>
+      </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>RawRigSchema</Name>
+      </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>RawSessionSchema</Name>
       </Expression>
     </Nodes>
     <Edges>

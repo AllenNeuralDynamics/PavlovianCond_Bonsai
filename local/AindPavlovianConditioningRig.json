@@ -1,0 +1,15 @@
+{
+  "aind_behavior_services_pkg_version": "0.12.3",
+  "version": "0.0.1",
+  "computer_name": "LAPTOP-BL7E76C1",
+  "rig_name": "test_rig",
+  "harp_behavior": {
+    "device_type": "Behavior",
+    "name": "Behavior",
+    "additional_settings": null,
+    "calibration": null,
+    "who_am_i": 1216,
+    "serial_number": null,
+    "port_name": "COM4"
+  }
+}
