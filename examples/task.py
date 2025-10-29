@@ -13,7 +13,9 @@ from aind_behavior_pavlovian_conditioning.task_logic import (
 )
 
 task_logic = AindPavlovianConitioningTaskLogic(
+    stage_name="test_stage",
     task_parameters=AindPavlovianConditioningTaskParameters(
+        rng_seed=0,
         environment=conditioning_task_logic.BlockStructure(
             blocks=[conditioning_task_logic.Block(name='test_block'), conditioning_task_logic.Block(name='test_block')]
         )

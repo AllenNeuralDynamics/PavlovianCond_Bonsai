@@ -2,7 +2,7 @@
   "name": "AindPavlovianConditioning",
   "description": "",
   "task_parameters": {
-    "rng_seed": null,
+    "rng_seed": 0.0,
     "aind_behavior_services_pkg_version": "0.12.3",
     "environment": {
       "blocks": [
@@ -16,5 +16,5 @@
     }
   },
   "version": "0.0.1",
-  "stage_name": null
+  "stage_name": "test_stage"
 }
