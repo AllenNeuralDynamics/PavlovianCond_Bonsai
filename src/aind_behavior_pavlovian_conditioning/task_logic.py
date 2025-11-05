@@ -1,6 +1,7 @@
 import logging
 from enum import Enum
 from typing import TYPE_CHECKING, Annotated, Any, Dict, List, Literal, Optional, Self, Union
+import aind_behavior_services.task_logic.distributions as distributions
 
 import aind_behavior_services.task_logic.distributions as distributions
 from aind_behavior_services.task_logic import AindBehaviorTaskLogicModel, TaskParameters
@@ -14,6 +15,10 @@ from aind_behavior_pavlovian_conditioning import (
 logger = logging.getLogger(__name__)
 
 class Block(BaseModel):
+    length: distributions.Distribution = Field(
+        default = distributions.ExponentialDistribution(),
+        description="The distribution from which the block length will be drawn from"
+    )
     name: str
 
 class BlockStructure(BaseModel):

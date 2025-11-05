@@ -7,9 +7,27 @@
     "environment": {
       "blocks": [
         {
+          "length": {
+            "family": "Exponential",
+            "distribution_parameters": {
+              "family": "Exponential",
+              "rate": 0.0
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
           "name": "test_block"
         },
         {
+          "length": {
+            "family": "Exponential",
+            "distribution_parameters": {
+              "family": "Exponential",
+              "rate": 0.0
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
           "name": "test_block"
         }
       ]

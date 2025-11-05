@@ -17,7 +17,10 @@ task_logic = AindPavlovianConitioningTaskLogic(
     task_parameters=AindPavlovianConditioningTaskParameters(
         rng_seed=0,
         environment=conditioning_task_logic.BlockStructure(
-            blocks=[conditioning_task_logic.Block(name='test_block'), conditioning_task_logic.Block(name='test_block')]
+            blocks=[
+                conditioning_task_logic.Block(name='test_block', length=distributions.ExponentialDistribution()), 
+                conditioning_task_logic.Block(name='test_block', length=distributions.ExponentialDistribution())
+            ]
         )
     )
 )
