@@ -48,13 +48,29 @@
     </VisualizerSettings>
   </WindowSettings>
   <WindowSettings Index="8">
+    <Visible>false</Visible>
     <Location>
-      <X>3249</X>
-      <Y>192</Y>
+      <X>120</X>
+      <Y>130</Y>
     </Location>
     <Size>
-      <Width>336</Width>
-      <Height>178</Height>
+      <Width>334</Width>
+      <Height>64</Height>
+    </Size>
+    <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+    <VisualizerSettings>
+      <ObjectTextVisualizer />
+    </VisualizerSettings>
+  </WindowSettings>
+  <WindowSettings Index="10">
+    <Visible>false</Visible>
+    <Location>
+      <X>149</X>
+      <Y>154</Y>
+    </Location>
+    <Size>
+      <Width>823</Width>
+      <Height>429</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
     <VisualizerSettings>
@@ -62,13 +78,14 @@
     </VisualizerSettings>
   </WindowSettings>
   <WindowSettings Index="11">
+    <Visible>false</Visible>
     <Location>
-      <X>2664</X>
-      <Y>104</Y>
+      <X>144</X>
+      <Y>156</Y>
     </Location>
     <Size>
-      <Width>336</Width>
-      <Height>136</Height>
+      <Width>334</Width>
+      <Height>81</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
     <VisualizerSettings>
@@ -76,13 +93,14 @@
     </VisualizerSettings>
   </WindowSettings>
   <WindowSettings Index="12">
+    <Visible>false</Visible>
     <Location>
-      <X>2703</X>
-      <Y>315</Y>
+      <X>150</X>
+      <Y>236</Y>
     </Location>
     <Size>
-      <Width>693</Width>
-      <Height>135</Height>
+      <Width>401</Width>
+      <Height>110</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
     <VisualizerSettings>
@@ -90,13 +108,14 @@
     </VisualizerSettings>
   </WindowSettings>
   <WindowSettings Index="13">
+    <Visible>false</Visible>
     <Location>
-      <X>3413</X>
-      <Y>359</Y>
+      <X>565</X>
+      <Y>245</Y>
     </Location>
     <Size>
-      <Width>336</Width>
-      <Height>162</Height>
+      <Width>358</Width>
+      <Height>172</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
     <VisualizerSettings>
