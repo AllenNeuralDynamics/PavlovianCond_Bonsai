@@ -16,16 +16,24 @@ task_logic = AindPavlovianConitioningTaskLogic(
     stage_name="test_stage",
     task_parameters=AindPavlovianConditioningTaskParameters(
         rng_seed=0,
+        min_iti=3,
         environment=conditioning_task_logic.BlockStructure(
-            blocks=[
-                conditioning_task_logic.Block(name='test_block', length=distributions.ExponentialDistribution(
-                    distribution_parameters=distributions.ExponentialDistributionParameters(
-                        rate=0.1
+            blocks=[conditioning_task_logic.Block(
+                        name='test_block', 
+                        length=distributions.ExponentialDistribution(
+                            distribution_parameters=distributions.ExponentialDistributionParameters(
+                                rate=0.1
+                            ) 
+                        ),
+                        inter_trial_interval=distributions.ExponentialDistribution(
+                            distribution_parameters=distributions.ExponentialDistributionParameters(
+                                rate=0.5
+                            )
+                        )
                     )
-                ))
-            ]
+                ]
+            )
         )
-    )
 )
 
 def main(path_seed: str = "./local/{schema}.json"):

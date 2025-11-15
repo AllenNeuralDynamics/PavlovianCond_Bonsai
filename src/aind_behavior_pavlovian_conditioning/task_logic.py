@@ -19,6 +19,10 @@ class Block(BaseModel):
         default = distributions.ExponentialDistribution(),
         description="The distribution from which the block length will be drawn from"
     )
+    inter_trial_interval: distributions.Distribution = Field(
+        default = distributions.ExponentialDistribution(),
+        description="The distribution from which the inter trial interval length will be drawn from"
+    ) # this could be in top-level environment
     name: str
 
 class BlockStructure(BaseModel):
@@ -26,6 +30,7 @@ class BlockStructure(BaseModel):
 
 class AindPavlovianConditioningTaskParameters(TaskParameters):
     environment: BlockStructure
+    min_iti: float
 
 class AindPavlovianConitioningTaskLogic(AindBehaviorTaskLogicModel):
     version: Literal[__semver__] = __semver__

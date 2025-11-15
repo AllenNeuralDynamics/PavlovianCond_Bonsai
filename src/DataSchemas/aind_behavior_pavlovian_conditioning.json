@@ -178,10 +178,15 @@
         },
         "environment": {
           "$ref": "#/$defs/BlockStructure"
+        },
+        "min_iti": {
+          "title": "Min Iti",
+          "type": "number"
         }
       },
       "required": [
-        "environment"
+        "environment",
+        "min_iti"
       ],
       "title": "AindPavlovianConditioningTaskParameters",
       "type": "object"
@@ -398,6 +403,19 @@
             "scaling_parameters": null
           },
           "description": "The distribution from which the block length will be drawn from"
+        },
+        "inter_trial_interval": {
+          "$ref": "#/$defs/Distribution",
+          "default": {
+            "family": "Exponential",
+            "distribution_parameters": {
+              "family": "Exponential",
+              "rate": 0.0
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
+          "description": "The distribution from which the inter trial interval length will be drawn from"
         },
         "name": {
           "title": "Name",

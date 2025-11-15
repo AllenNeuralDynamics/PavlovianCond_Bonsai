@@ -484,6 +484,8 @@ namespace AindPavlovianConditioningDataSchema
     
         private BlockStructure _environment;
     
+        private double _minIti;
+    
         public AindPavlovianConditioningTaskParameters()
         {
             _aindBehaviorServicesPkgVersion = "0.12.3";
@@ -495,6 +497,7 @@ namespace AindPavlovianConditioningDataSchema
             _rngSeed = other._rngSeed;
             _aindBehaviorServicesPkgVersion = other._aindBehaviorServicesPkgVersion;
             _environment = other._environment;
+            _minIti = other._minIti;
         }
     
         /// <summary>
@@ -542,6 +545,19 @@ namespace AindPavlovianConditioningDataSchema
             }
         }
     
+        [Newtonsoft.Json.JsonPropertyAttribute("min_iti", Required=Newtonsoft.Json.Required.Always)]
+        public double MinIti
+        {
+            get
+            {
+                return _minIti;
+            }
+            set
+            {
+                _minIti = value;
+            }
+        }
+    
         public System.IObservable<AindPavlovianConditioningTaskParameters> Generate()
         {
             return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new AindPavlovianConditioningTaskParameters(this)));
@@ -556,7 +572,8 @@ namespace AindPavlovianConditioningDataSchema
         {
             stringBuilder.Append("RngSeed = " + _rngSeed + ", ");
             stringBuilder.Append("AindBehaviorServicesPkgVersion = " + _aindBehaviorServicesPkgVersion + ", ");
-            stringBuilder.Append("Environment = " + _environment);
+            stringBuilder.Append("Environment = " + _environment + ", ");
+            stringBuilder.Append("MinIti = " + _minIti);
             return true;
         }
     
@@ -1224,16 +1241,20 @@ namespace AindPavlovianConditioningDataSchema
     
         private Distribution _length;
     
+        private Distribution _interTrialInterval;
+    
         private string _name;
     
         public Block()
         {
             _length = new Distribution();
+            _interTrialInterval = new Distribution();
         }
     
         protected Block(Block other)
         {
             _length = other._length;
+            _interTrialInterval = other._interTrialInterval;
             _name = other._name;
         }
     
@@ -1252,6 +1273,24 @@ namespace AindPavlovianConditioningDataSchema
             set
             {
                 _length = value;
+            }
+        }
+    
+        /// <summary>
+        /// The distribution from which the inter trial interval length will be drawn from
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("inter_trial_interval")]
+        [System.ComponentModel.DescriptionAttribute("The distribution from which the inter trial interval length will be drawn from")]
+        public Distribution InterTrialInterval
+        {
+            get
+            {
+                return _interTrialInterval;
+            }
+            set
+            {
+                _interTrialInterval = value;
             }
         }
     
@@ -1281,6 +1320,7 @@ namespace AindPavlovianConditioningDataSchema
         protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
         {
             stringBuilder.Append("Length = " + _length + ", ");
+            stringBuilder.Append("InterTrialInterval = " + _interTrialInterval + ", ");
             stringBuilder.Append("Name = " + _name);
             return true;
         }
@@ -1367,12 +1407,12 @@ namespace AindPavlovianConditioningDataSchema
     [Newtonsoft.Json.JsonConverter(typeof(JsonInheritanceConverter), "family")]
     [JsonInheritanceAttribute("Scalar", typeof(Scalar))]
     [JsonInheritanceAttribute("Beta", typeof(BetaDistribution))]
+    [JsonInheritanceAttribute("Binomial", typeof(BinomialDistribution))]
     [JsonInheritanceAttribute("Normal", typeof(NormalDistribution))]
     [JsonInheritanceAttribute("LogNormal", typeof(LogNormalDistribution))]
     [JsonInheritanceAttribute("Exponential", typeof(ExponentialDistribution))]
     [JsonInheritanceAttribute("Uniform", typeof(UniformDistribution))]
     [JsonInheritanceAttribute("Poisson", typeof(PoissonDistribution))]
-    [JsonInheritanceAttribute("Binomial", typeof(BinomialDistribution))]
     [JsonInheritanceAttribute("Gamma", typeof(GammaDistribution))]
     [JsonInheritanceAttribute("Pdf", typeof(PdfDistribution))]
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
@@ -3558,6 +3598,51 @@ namespace AindPavlovianConditioningDataSchema
 
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
+    [Newtonsoft.Json.JsonConverter(typeof(JsonInheritanceConverter), "family")]
+    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
+    [Bonsai.CombinatorAttribute(MethodName="Generate")]
+    public partial class InterTrialInterval
+    {
+    
+        public InterTrialInterval()
+        {
+        }
+    
+        protected InterTrialInterval(InterTrialInterval other)
+        {
+        }
+    
+        public System.IObservable<InterTrialInterval> Generate()
+        {
+            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new InterTrialInterval(this)));
+        }
+    
+        public System.IObservable<InterTrialInterval> Generate<TSource>(System.IObservable<TSource> source)
+        {
+            return System.Reactive.Linq.Observable.Select(source, _ => new InterTrialInterval(this));
+        }
+    
+        protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
+        {
+            return false;
+        }
+    
+        public override string ToString()
+        {
+            System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+            stringBuilder.Append(GetType().Name);
+            stringBuilder.Append(" { ");
+            if (PrintMembers(stringBuilder))
+            {
+                stringBuilder.Append(" ");
+            }
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
+        }
+    }
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
     [Bonsai.CombinatorAttribute(MethodName="Generate")]
     public partial class TruncationParameters2
@@ -3800,12 +3885,12 @@ namespace AindPavlovianConditioningDataSchema
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Combinator)]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<Scalar>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<BetaDistribution>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<BinomialDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<NormalDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<LogNormalDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ExponentialDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<UniformDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<PoissonDistribution>))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<BinomialDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<GammaDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<PdfDistribution>))]
     public partial class MatchDistribution : Bonsai.Expressions.SingleArgumentExpressionBuilder
@@ -3831,6 +3916,45 @@ namespace AindPavlovianConditioningDataSchema
             return System.Reactive.Linq.Observable.Create<TResult>(observer =>
             {
                 var sourceObserver = System.Reactive.Observer.Create<Distribution>(
+                    value =>
+                    {
+                        var match = value as TResult;
+                        if (match != null) observer.OnNext(match);
+                    },
+                    observer.OnError,
+                    observer.OnCompleted);
+                return System.ObservableExtensions.SubscribeSafe(source, sourceObserver);
+            });
+        }
+    }
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
+    [System.ComponentModel.DefaultPropertyAttribute("Type")]
+    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Combinator)]
+    public partial class MatchInterTrialInterval : Bonsai.Expressions.SingleArgumentExpressionBuilder
+    {
+    
+        public Bonsai.Expressions.TypeMapping Type { get; set; }
+
+        public override System.Linq.Expressions.Expression Build(System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression> arguments)
+        {
+            var typeMapping = Type;
+            var returnType = typeMapping != null ? typeMapping.GetType().GetGenericArguments()[0] : typeof(InterTrialInterval);
+            return System.Linq.Expressions.Expression.Call(
+                typeof(MatchInterTrialInterval),
+                "Process",
+                new System.Type[] { returnType },
+                System.Linq.Enumerable.Single(arguments));
+        }
+
+    
+        private static System.IObservable<TResult> Process<TResult>(System.IObservable<InterTrialInterval> source)
+            where TResult : InterTrialInterval
+        {
+            return System.Reactive.Linq.Observable.Create<TResult>(observer =>
+            {
+                var sourceObserver = System.Reactive.Observer.Create<InterTrialInterval>(
                     value =>
                     {
                         var match = value as TResult;
@@ -4017,6 +4141,11 @@ namespace AindPavlovianConditioningDataSchema
             return Process<UniformDistributionParameters>(source);
         }
 
+        public System.IObservable<string> Process(System.IObservable<InterTrialInterval> source)
+        {
+            return Process<InterTrialInterval>(source);
+        }
+
         public System.IObservable<string> Process(System.IObservable<TruncationParameters2> source)
         {
             return Process<TruncationParameters2>(source);
@@ -4067,6 +4196,7 @@ namespace AindPavlovianConditioningDataSchema
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<TruncationParameters>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<UniformDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<UniformDistributionParameters>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<InterTrialInterval>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<TruncationParameters2>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ScalingParameters2>))]
     public partial class DeserializeFromJson : Bonsai.Expressions.SingleArgumentExpressionBuilder

@@ -16,6 +16,15 @@
             "truncation_parameters": null,
             "scaling_parameters": null
           },
+          "inter_trial_interval": {
+            "family": "Exponential",
+            "distribution_parameters": {
+              "family": "Exponential",
+              "rate": 0.5
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
           "name": "test_block"
         }
       ]
