@@ -145,11 +145,16 @@
         "harp_behavior": {
           "$ref": "#/$defs/HarpBehavior",
           "description": "Harp behavior"
+        },
+        "harp_sound_card": {
+          "$ref": "#/$defs/HarpSoundCard",
+          "description": "Harp sound card"
         }
       },
       "required": [
         "rig_name",
-        "harp_behavior"
+        "harp_behavior",
+        "harp_sound_card"
       ],
       "title": "AindPavlovianConditioningRig",
       "type": "object"
@@ -182,11 +187,20 @@
         "min_iti": {
           "title": "Min Iti",
           "type": "number"
+        },
+        "reward_delay": {
+          "title": "Reward Delay",
+          "type": "number"
+        },
+        "cs": {
+          "$ref": "#/$defs/SoundStimulus"
         }
       },
       "required": [
         "environment",
-        "min_iti"
+        "min_iti",
+        "reward_delay",
+        "cs"
       ],
       "title": "AindPavlovianConditioningTaskParameters",
       "type": "object"
@@ -416,6 +430,27 @@
             "scaling_parameters": null
           },
           "description": "The distribution from which the inter trial interval length will be drawn from"
+        },
+        "reward_selection": {
+          "$ref": "#/$defs/Distribution",
+          "default": {
+            "family": "Uniform",
+            "distribution_parameters": {
+              "family": "Uniform",
+              "max": 1.0,
+              "min": 0.0
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
+          "description": "The distribution from which the reward choice will be drawn from"
+        },
+        "reward_probability_p": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Reward Probability P",
+          "type": "number"
         },
         "name": {
           "title": "Name",
@@ -707,6 +742,82 @@
         "port_name"
       ],
       "title": "HarpBehavior",
+      "type": "object"
+    },
+    "HarpSoundCard": {
+      "properties": {
+        "device_type": {
+          "const": "SoundCard",
+          "default": "SoundCard",
+          "title": "Device Type",
+          "type": "string"
+        },
+        "device_name": {
+          "default": null,
+          "description": "Device name",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Device Name"
+        },
+        "additional_settings": {
+          "default": null,
+          "description": "Additional settings",
+          "oneOf": [
+            {
+              "$ref": "#/$defs/BaseModel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "calibration": {
+          "default": null,
+          "description": "Calibration",
+          "oneOf": [
+            {
+              "$ref": "#/$defs/BaseModel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "who_am_i": {
+          "const": 1280,
+          "default": 1280,
+          "title": "Who Am I",
+          "type": "integer"
+        },
+        "serial_number": {
+          "default": null,
+          "description": "Device serial number",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Serial Number"
+        },
+        "port_name": {
+          "description": "Device port name",
+          "title": "Port Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "port_name"
+      ],
+      "title": "HarpSoundCard",
       "type": "object"
     },
     "LogNormalDistribution": {
@@ -1071,6 +1182,24 @@
         }
       },
       "title": "ScalingParameters",
+      "type": "object"
+    },
+    "SoundStimulus": {
+      "properties": {
+        "index": {
+          "default": 11,
+          "minimum": 0,
+          "title": "Index",
+          "type": "integer"
+        },
+        "attenuation": {
+          "default": 200,
+          "minimum": 0,
+          "title": "Attenuation",
+          "type": "number"
+        }
+      },
+      "title": "SoundStimulus",
       "type": "object"
     },
     "TruncationParameters": {

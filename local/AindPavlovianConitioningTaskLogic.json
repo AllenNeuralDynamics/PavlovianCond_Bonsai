@@ -25,10 +25,24 @@
             "truncation_parameters": null,
             "scaling_parameters": null
           },
+          "reward_selection": {
+            "family": "Uniform",
+            "distribution_parameters": {
+              "family": "Uniform",
+              "min": 0.0,
+              "max": 1.0
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
+          "reward_probability_p": 0.9,
+          "cs": 11,
           "name": "test_block"
         }
       ]
-    }
+    },
+    "min_iti": 3.0,
+    "reward_delay": 0.1
   },
   "version": "0.0.1",
   "stage_name": "test_stage"

@@ -12,7 +12,8 @@ from aind_behavior_services.rig.harp import (
 
 rig = AindPavlovianConditioningRig(
     rig_name="test_rig",
-    harp_behavior=HarpBehavior(port_name="COM4")
+    harp_behavior=HarpBehavior(port_name="COM4"),
+    harp_sound_card=HarpSoundCard(port_name="COM8")
 )
 
 def main(path_seed: str = "./local/{schema}.json"):

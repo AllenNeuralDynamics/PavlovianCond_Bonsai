@@ -343,11 +343,14 @@ namespace AindPavlovianConditioningDataSchema
     
         private HarpBehavior _harpBehavior;
     
+        private HarpSoundCard _harpSoundCard;
+    
         public AindPavlovianConditioningRig()
         {
             _aindBehaviorServicesPkgVersion = "0.12.3";
             _version = "0.0.1";
             _harpBehavior = new HarpBehavior();
+            _harpSoundCard = new HarpSoundCard();
         }
     
         protected AindPavlovianConditioningRig(AindPavlovianConditioningRig other)
@@ -357,6 +360,7 @@ namespace AindPavlovianConditioningDataSchema
             _computerName = other._computerName;
             _rigName = other._rigName;
             _harpBehavior = other._harpBehavior;
+            _harpSoundCard = other._harpSoundCard;
         }
     
         [Newtonsoft.Json.JsonPropertyAttribute("aind_behavior_services_pkg_version")]
@@ -437,6 +441,24 @@ namespace AindPavlovianConditioningDataSchema
             }
         }
     
+        /// <summary>
+        /// Harp sound card
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("harp_sound_card", Required=Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DescriptionAttribute("Harp sound card")]
+        public HarpSoundCard HarpSoundCard
+        {
+            get
+            {
+                return _harpSoundCard;
+            }
+            set
+            {
+                _harpSoundCard = value;
+            }
+        }
+    
         public System.IObservable<AindPavlovianConditioningRig> Generate()
         {
             return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new AindPavlovianConditioningRig(this)));
@@ -453,7 +475,8 @@ namespace AindPavlovianConditioningDataSchema
             stringBuilder.Append("Version = " + _version + ", ");
             stringBuilder.Append("ComputerName = " + _computerName + ", ");
             stringBuilder.Append("RigName = " + _rigName + ", ");
-            stringBuilder.Append("HarpBehavior = " + _harpBehavior);
+            stringBuilder.Append("HarpBehavior = " + _harpBehavior + ", ");
+            stringBuilder.Append("HarpSoundCard = " + _harpSoundCard);
             return true;
         }
     
@@ -486,10 +509,15 @@ namespace AindPavlovianConditioningDataSchema
     
         private double _minIti;
     
+        private double _rewardDelay;
+    
+        private SoundStimulus _cs;
+    
         public AindPavlovianConditioningTaskParameters()
         {
             _aindBehaviorServicesPkgVersion = "0.12.3";
             _environment = new BlockStructure();
+            _cs = new SoundStimulus();
         }
     
         protected AindPavlovianConditioningTaskParameters(AindPavlovianConditioningTaskParameters other)
@@ -498,6 +526,8 @@ namespace AindPavlovianConditioningDataSchema
             _aindBehaviorServicesPkgVersion = other._aindBehaviorServicesPkgVersion;
             _environment = other._environment;
             _minIti = other._minIti;
+            _rewardDelay = other._rewardDelay;
+            _cs = other._cs;
         }
     
         /// <summary>
@@ -558,6 +588,33 @@ namespace AindPavlovianConditioningDataSchema
             }
         }
     
+        [Newtonsoft.Json.JsonPropertyAttribute("reward_delay", Required=Newtonsoft.Json.Required.Always)]
+        public double RewardDelay
+        {
+            get
+            {
+                return _rewardDelay;
+            }
+            set
+            {
+                _rewardDelay = value;
+            }
+        }
+    
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("cs", Required=Newtonsoft.Json.Required.Always)]
+        public SoundStimulus Cs
+        {
+            get
+            {
+                return _cs;
+            }
+            set
+            {
+                _cs = value;
+            }
+        }
+    
         public System.IObservable<AindPavlovianConditioningTaskParameters> Generate()
         {
             return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new AindPavlovianConditioningTaskParameters(this)));
@@ -573,7 +630,9 @@ namespace AindPavlovianConditioningDataSchema
             stringBuilder.Append("RngSeed = " + _rngSeed + ", ");
             stringBuilder.Append("AindBehaviorServicesPkgVersion = " + _aindBehaviorServicesPkgVersion + ", ");
             stringBuilder.Append("Environment = " + _environment + ", ");
-            stringBuilder.Append("MinIti = " + _minIti);
+            stringBuilder.Append("MinIti = " + _minIti + ", ");
+            stringBuilder.Append("RewardDelay = " + _rewardDelay + ", ");
+            stringBuilder.Append("Cs = " + _cs);
             return true;
         }
     
@@ -1243,18 +1302,26 @@ namespace AindPavlovianConditioningDataSchema
     
         private Distribution _interTrialInterval;
     
+        private Distribution _rewardSelection;
+    
+        private double _rewardProbabilityP;
+    
         private string _name;
     
         public Block()
         {
             _length = new Distribution();
             _interTrialInterval = new Distribution();
+            _rewardSelection = new Distribution();
+            _rewardProbabilityP = 0.5D;
         }
     
         protected Block(Block other)
         {
             _length = other._length;
             _interTrialInterval = other._interTrialInterval;
+            _rewardSelection = other._rewardSelection;
+            _rewardProbabilityP = other._rewardProbabilityP;
             _name = other._name;
         }
     
@@ -1294,6 +1361,37 @@ namespace AindPavlovianConditioningDataSchema
             }
         }
     
+        /// <summary>
+        /// The distribution from which the reward choice will be drawn from
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("reward_selection")]
+        [System.ComponentModel.DescriptionAttribute("The distribution from which the reward choice will be drawn from")]
+        public Distribution RewardSelection
+        {
+            get
+            {
+                return _rewardSelection;
+            }
+            set
+            {
+                _rewardSelection = value;
+            }
+        }
+    
+        [Newtonsoft.Json.JsonPropertyAttribute("reward_probability_p")]
+        public double RewardProbabilityP
+        {
+            get
+            {
+                return _rewardProbabilityP;
+            }
+            set
+            {
+                _rewardProbabilityP = value;
+            }
+        }
+    
         [Newtonsoft.Json.JsonPropertyAttribute("name", Required=Newtonsoft.Json.Required.Always)]
         public string Name
         {
@@ -1321,6 +1419,8 @@ namespace AindPavlovianConditioningDataSchema
         {
             stringBuilder.Append("Length = " + _length + ", ");
             stringBuilder.Append("InterTrialInterval = " + _interTrialInterval + ", ");
+            stringBuilder.Append("RewardSelection = " + _rewardSelection + ", ");
+            stringBuilder.Append("RewardProbabilityP = " + _rewardProbabilityP + ", ");
             stringBuilder.Append("Name = " + _name);
             return true;
         }
@@ -1408,9 +1508,9 @@ namespace AindPavlovianConditioningDataSchema
     [JsonInheritanceAttribute("Scalar", typeof(Scalar))]
     [JsonInheritanceAttribute("Beta", typeof(BetaDistribution))]
     [JsonInheritanceAttribute("Binomial", typeof(BinomialDistribution))]
+    [JsonInheritanceAttribute("Exponential", typeof(ExponentialDistribution))]
     [JsonInheritanceAttribute("Normal", typeof(NormalDistribution))]
     [JsonInheritanceAttribute("LogNormal", typeof(LogNormalDistribution))]
-    [JsonInheritanceAttribute("Exponential", typeof(ExponentialDistribution))]
     [JsonInheritanceAttribute("Uniform", typeof(UniformDistribution))]
     [JsonInheritanceAttribute("Poisson", typeof(PoissonDistribution))]
     [JsonInheritanceAttribute("Gamma", typeof(GammaDistribution))]
@@ -2042,6 +2142,193 @@ namespace AindPavlovianConditioningDataSchema
         public System.IObservable<HarpBehavior> Generate<TSource>(System.IObservable<TSource> source)
         {
             return System.Reactive.Linq.Observable.Select(source, _ => new HarpBehavior(this));
+        }
+    
+        protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
+        {
+            stringBuilder.Append("DeviceType = " + _deviceType + ", ");
+            stringBuilder.Append("DeviceName = " + _deviceName + ", ");
+            stringBuilder.Append("AdditionalSettings = " + _additionalSettings + ", ");
+            stringBuilder.Append("Calibration = " + _calibration + ", ");
+            stringBuilder.Append("WhoAmI = " + _whoAmI + ", ");
+            stringBuilder.Append("SerialNumber = " + _serialNumber + ", ");
+            stringBuilder.Append("PortName = " + _portName);
+            return true;
+        }
+    
+        public override string ToString()
+        {
+            System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+            stringBuilder.Append(GetType().Name);
+            stringBuilder.Append(" { ");
+            if (PrintMembers(stringBuilder))
+            {
+                stringBuilder.Append(" ");
+            }
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
+        }
+    }
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
+    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
+    [Bonsai.CombinatorAttribute(MethodName="Generate")]
+    public partial class HarpSoundCard
+    {
+    
+        private string _deviceType;
+    
+        private string _deviceName;
+    
+        private BaseModel _additionalSettings;
+    
+        private BaseModel _calibration;
+    
+        private int _whoAmI;
+    
+        private string _serialNumber;
+    
+        private string _portName;
+    
+        public HarpSoundCard()
+        {
+            _deviceType = "SoundCard";
+            _whoAmI = 1280;
+        }
+    
+        protected HarpSoundCard(HarpSoundCard other)
+        {
+            _deviceType = other._deviceType;
+            _deviceName = other._deviceName;
+            _additionalSettings = other._additionalSettings;
+            _calibration = other._calibration;
+            _whoAmI = other._whoAmI;
+            _serialNumber = other._serialNumber;
+            _portName = other._portName;
+        }
+    
+        [Newtonsoft.Json.JsonPropertyAttribute("device_type")]
+        public string DeviceType
+        {
+            get
+            {
+                return _deviceType;
+            }
+            set
+            {
+                _deviceType = value;
+            }
+        }
+    
+        /// <summary>
+        /// Device name
+        /// </summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("device_name")]
+        [System.ComponentModel.DescriptionAttribute("Device name")]
+        public string DeviceName
+        {
+            get
+            {
+                return _deviceName;
+            }
+            set
+            {
+                _deviceName = value;
+            }
+        }
+    
+        /// <summary>
+        /// Additional settings
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("additional_settings")]
+        [System.ComponentModel.DescriptionAttribute("Additional settings")]
+        public BaseModel AdditionalSettings
+        {
+            get
+            {
+                return _additionalSettings;
+            }
+            set
+            {
+                _additionalSettings = value;
+            }
+        }
+    
+        /// <summary>
+        /// Calibration
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("calibration")]
+        [System.ComponentModel.DescriptionAttribute("Calibration")]
+        public BaseModel Calibration
+        {
+            get
+            {
+                return _calibration;
+            }
+            set
+            {
+                _calibration = value;
+            }
+        }
+    
+        [Newtonsoft.Json.JsonPropertyAttribute("who_am_i")]
+        public int WhoAmI
+        {
+            get
+            {
+                return _whoAmI;
+            }
+            set
+            {
+                _whoAmI = value;
+            }
+        }
+    
+        /// <summary>
+        /// Device serial number
+        /// </summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("serial_number")]
+        [System.ComponentModel.DescriptionAttribute("Device serial number")]
+        public string SerialNumber
+        {
+            get
+            {
+                return _serialNumber;
+            }
+            set
+            {
+                _serialNumber = value;
+            }
+        }
+    
+        /// <summary>
+        /// Device port name
+        /// </summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("port_name", Required=Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DescriptionAttribute("Device port name")]
+        public string PortName
+        {
+            get
+            {
+                return _portName;
+            }
+            set
+            {
+                _portName = value;
+            }
+        }
+    
+        public System.IObservable<HarpSoundCard> Generate()
+        {
+            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new HarpSoundCard(this)));
+        }
+    
+        public System.IObservable<HarpSoundCard> Generate<TSource>(System.IObservable<TSource> source)
+        {
+            return System.Reactive.Linq.Observable.Select(source, _ => new HarpSoundCard(this));
         }
     
         protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
@@ -3243,6 +3530,86 @@ namespace AindPavlovianConditioningDataSchema
     }
 
 
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
+    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
+    [Bonsai.CombinatorAttribute(MethodName="Generate")]
+    public partial class SoundStimulus
+    {
+    
+        private int _index;
+    
+        private double _attenuation;
+    
+        public SoundStimulus()
+        {
+            _index = 11;
+            _attenuation = 200D;
+        }
+    
+        protected SoundStimulus(SoundStimulus other)
+        {
+            _index = other._index;
+            _attenuation = other._attenuation;
+        }
+    
+        [Newtonsoft.Json.JsonPropertyAttribute("index")]
+        public int Index
+        {
+            get
+            {
+                return _index;
+            }
+            set
+            {
+                _index = value;
+            }
+        }
+    
+        [Newtonsoft.Json.JsonPropertyAttribute("attenuation")]
+        public double Attenuation
+        {
+            get
+            {
+                return _attenuation;
+            }
+            set
+            {
+                _attenuation = value;
+            }
+        }
+    
+        public System.IObservable<SoundStimulus> Generate()
+        {
+            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new SoundStimulus(this)));
+        }
+    
+        public System.IObservable<SoundStimulus> Generate<TSource>(System.IObservable<TSource> source)
+        {
+            return System.Reactive.Linq.Observable.Select(source, _ => new SoundStimulus(this));
+        }
+    
+        protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
+        {
+            stringBuilder.Append("Index = " + _index + ", ");
+            stringBuilder.Append("Attenuation = " + _attenuation);
+            return true;
+        }
+    
+        public override string ToString()
+        {
+            System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+            stringBuilder.Append(GetType().Name);
+            stringBuilder.Append(" { ");
+            if (PrintMembers(stringBuilder))
+            {
+                stringBuilder.Append(" ");
+            }
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
+        }
+    }
+
+
     /// <summary>
     /// Parameters for truncating a distribution to a specified range. Truncation should
     ///be applied after sampling and scaling.
@@ -3643,6 +4010,51 @@ namespace AindPavlovianConditioningDataSchema
 
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
+    [Newtonsoft.Json.JsonConverter(typeof(JsonInheritanceConverter), "family")]
+    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
+    [Bonsai.CombinatorAttribute(MethodName="Generate")]
+    public partial class RewardSelection
+    {
+    
+        public RewardSelection()
+        {
+        }
+    
+        protected RewardSelection(RewardSelection other)
+        {
+        }
+    
+        public System.IObservable<RewardSelection> Generate()
+        {
+            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new RewardSelection(this)));
+        }
+    
+        public System.IObservable<RewardSelection> Generate<TSource>(System.IObservable<TSource> source)
+        {
+            return System.Reactive.Linq.Observable.Select(source, _ => new RewardSelection(this));
+        }
+    
+        protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
+        {
+            return false;
+        }
+    
+        public override string ToString()
+        {
+            System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+            stringBuilder.Append(GetType().Name);
+            stringBuilder.Append(" { ");
+            if (PrintMembers(stringBuilder))
+            {
+                stringBuilder.Append(" ");
+            }
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
+        }
+    }
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
     [Bonsai.CombinatorAttribute(MethodName="Generate")]
     public partial class TruncationParameters2
@@ -3886,9 +4298,9 @@ namespace AindPavlovianConditioningDataSchema
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<Scalar>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<BetaDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<BinomialDistribution>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ExponentialDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<NormalDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<LogNormalDistribution>))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ExponentialDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<UniformDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<PoissonDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<GammaDistribution>))]
@@ -3955,6 +4367,45 @@ namespace AindPavlovianConditioningDataSchema
             return System.Reactive.Linq.Observable.Create<TResult>(observer =>
             {
                 var sourceObserver = System.Reactive.Observer.Create<InterTrialInterval>(
+                    value =>
+                    {
+                        var match = value as TResult;
+                        if (match != null) observer.OnNext(match);
+                    },
+                    observer.OnError,
+                    observer.OnCompleted);
+                return System.ObservableExtensions.SubscribeSafe(source, sourceObserver);
+            });
+        }
+    }
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
+    [System.ComponentModel.DefaultPropertyAttribute("Type")]
+    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Combinator)]
+    public partial class MatchRewardSelection : Bonsai.Expressions.SingleArgumentExpressionBuilder
+    {
+    
+        public Bonsai.Expressions.TypeMapping Type { get; set; }
+
+        public override System.Linq.Expressions.Expression Build(System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression> arguments)
+        {
+            var typeMapping = Type;
+            var returnType = typeMapping != null ? typeMapping.GetType().GetGenericArguments()[0] : typeof(RewardSelection);
+            return System.Linq.Expressions.Expression.Call(
+                typeof(MatchRewardSelection),
+                "Process",
+                new System.Type[] { returnType },
+                System.Linq.Enumerable.Single(arguments));
+        }
+
+    
+        private static System.IObservable<TResult> Process<TResult>(System.IObservable<RewardSelection> source)
+            where TResult : RewardSelection
+        {
+            return System.Reactive.Linq.Observable.Create<TResult>(observer =>
+            {
+                var sourceObserver = System.Reactive.Observer.Create<RewardSelection>(
                     value =>
                     {
                         var match = value as TResult;
@@ -4071,6 +4522,11 @@ namespace AindPavlovianConditioningDataSchema
             return Process<HarpBehavior>(source);
         }
 
+        public System.IObservable<string> Process(System.IObservable<HarpSoundCard> source)
+        {
+            return Process<HarpSoundCard>(source);
+        }
+
         public System.IObservable<string> Process(System.IObservable<LogNormalDistribution> source)
         {
             return Process<LogNormalDistribution>(source);
@@ -4126,6 +4582,11 @@ namespace AindPavlovianConditioningDataSchema
             return Process<ScalingParameters>(source);
         }
 
+        public System.IObservable<string> Process(System.IObservable<SoundStimulus> source)
+        {
+            return Process<SoundStimulus>(source);
+        }
+
         public System.IObservable<string> Process(System.IObservable<TruncationParameters> source)
         {
             return Process<TruncationParameters>(source);
@@ -4144,6 +4605,11 @@ namespace AindPavlovianConditioningDataSchema
         public System.IObservable<string> Process(System.IObservable<InterTrialInterval> source)
         {
             return Process<InterTrialInterval>(source);
+        }
+
+        public System.IObservable<string> Process(System.IObservable<RewardSelection> source)
+        {
+            return Process<RewardSelection>(source);
         }
 
         public System.IObservable<string> Process(System.IObservable<TruncationParameters2> source)
@@ -4182,6 +4648,7 @@ namespace AindPavlovianConditioningDataSchema
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<GammaDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<GammaDistributionParameters>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<HarpBehavior>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<HarpSoundCard>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<LogNormalDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<LogNormalDistributionParameters>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<NormalDistribution>))]
@@ -4193,10 +4660,12 @@ namespace AindPavlovianConditioningDataSchema
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<Scalar>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ScalarDistributionParameter>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ScalingParameters>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<SoundStimulus>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<TruncationParameters>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<UniformDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<UniformDistributionParameters>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<InterTrialInterval>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<RewardSelection>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<TruncationParameters2>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ScalingParameters2>))]
     public partial class DeserializeFromJson : Bonsai.Expressions.SingleArgumentExpressionBuilder
