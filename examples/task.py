@@ -10,6 +10,7 @@ import aind_behavior_pavlovian_conditioning.task_logic as conditioning_task_logi
 from aind_behavior_pavlovian_conditioning.task_logic import (
     AindPavlovianConitioningTaskLogic,
     AindPavlovianConditioningTaskParameters,
+    SoundStimulus
 )
 
 task_logic = AindPavlovianConitioningTaskLogic(
@@ -17,9 +18,12 @@ task_logic = AindPavlovianConitioningTaskLogic(
     task_parameters=AindPavlovianConditioningTaskParameters(
         rng_seed=0,
         min_iti=3,
+        reward_delay=0.1,
+        cs=SoundStimulus(index=11, attenuation=200),
         environment=conditioning_task_logic.BlockStructure(
             blocks=[conditioning_task_logic.Block(
-                        name='test_block', 
+                        name='test_block',
+                        reward_probability_p = 0.9,
                         length=distributions.ExponentialDistribution(
                             distribution_parameters=distributions.ExponentialDistributionParameters(
                                 rate=0.1

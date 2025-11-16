@@ -131,6 +131,20 @@ namespace AindPavlovianConditioningDataSchema
         }
     }
 
+    partial class UniformDistribution
+    {
+
+        public override IDistribution GetDistribution(Random random)
+        {
+            return new ContinuousDistributionWrapper(new ContinuousUniform(DistributionParameters.Min, DistributionParameters.Max, random));
+        }
+
+        public override double SampleDistribution(Random random)
+        {
+            return DrawSample(GetDistribution(random), ScalingParameters, TruncationParameters);
+        }
+    }
+
     [Combinator]
     [Description("Samples a value for a known distribution.")]
     [WorkflowElementCategory(ElementCategory.Transform)]

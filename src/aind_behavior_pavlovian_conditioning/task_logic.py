@@ -22,15 +22,26 @@ class Block(BaseModel):
     inter_trial_interval: distributions.Distribution = Field(
         default = distributions.ExponentialDistribution(),
         description="The distribution from which the inter trial interval length will be drawn from"
-    ) # this could be in top-level environment
+    )
+    reward_selection: distributions.Distribution = Field(
+        default = distributions.UniformDistribution(distribution_parameters=distributions.UniformDistributionParameters(min=0, max=1)),
+        description="The distribution from which the reward choice will be drawn from"
+    )
+    reward_probability_p: float = Field(default=0.5, ge=0, le=1)
     name: str
 
 class BlockStructure(BaseModel):
     blocks: List[Block]
-
+    
+class SoundStimulus(BaseModel):
+    index: int = Field(default=11, ge=0)
+    attenuation: float = Field(default=200, ge=0)
 class AindPavlovianConditioningTaskParameters(TaskParameters):
     environment: BlockStructure
     min_iti: float
+    reward_delay: float
+    reward_size: int = Field(default=24, ge=0)
+    cs: SoundStimulus
 
 class AindPavlovianConitioningTaskLogic(AindBehaviorTaskLogicModel):
     version: Literal[__semver__] = __semver__
