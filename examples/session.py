@@ -6,7 +6,7 @@ from aind_behavior_services.session import AindBehaviorSessionModel
 session = AindBehaviorSessionModel(
     date=datetime.datetime.now(tz=datetime.timezone.utc),
     experiment="AindPavlovianConditioning",
-    root_path="c://",
+    root_path="C:/Users/neurogears/source/repos/AllenNeuralDynamics/PavlovianCond_Bonsai/temp_data",
     subject="test",
     notes="test session",
     experiment_version="0.1.0",
