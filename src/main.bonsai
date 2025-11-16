@@ -4,11 +4,13 @@
                  xmlns:p1="clr-namespace:AindPavlovianConditioningDataSchema;assembly=Extensions"
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
                  xmlns:p2="clr-namespace:System.Reactive;assembly=System.Reactive.Core"
+                 xmlns:p3="clr-namespace:AllenNeuralDynamics.VersionControl;assembly=AllenNeuralDynamics.VersionControl"
                  xmlns:harp="clr-namespace:Bonsai.Harp;assembly=Bonsai.Harp"
-                 xmlns:p3="clr-namespace:Harp.SoundCard;assembly=Harp.SoundCard"
+                 xmlns:p4="clr-namespace:Harp.SoundCard;assembly=Harp.SoundCard"
                  xmlns:sys="clr-namespace:System;assembly=mscorlib"
                  xmlns:beh="clr-namespace:Harp.Behavior;assembly=Harp.Behavior"
                  xmlns:scr="clr-namespace:Bonsai.Scripting.Expressions;assembly=Bonsai.Scripting.Expressions"
+                 xmlns:p5="clr-namespace:AllenNeuralDynamics.Core;assembly=AllenNeuralDynamics.Core"
                  xmlns:num="clr-namespace:Bonsai.Numerics;assembly=Bonsai.Numerics"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
@@ -39,7 +41,7 @@
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:AsyncSubject">
-              <Name>SubectSchema</Name>
+              <Name>SubjectSchema</Name>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
               <Name>RawRigSchema</Name>
@@ -108,6 +110,24 @@
         </Workflow>
       </Expression>
       <Expression xsi:type="GroupWorkflow">
+        <Name>SessionSettings</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="p3:CreateRepository">
+                <p3:Path>../.</p3:Path>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="rx:AsyncSubject">
+              <Name>Repository</Name>
+            </Expression>
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
         <Name>Hardware</Name>
         <Workflow>
           <Nodes>
@@ -152,7 +172,7 @@
                           <Property Name="PortName" />
                         </Expression>
                         <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="p3:Device">
+                          <Combinator xsi:type="p4:Device">
                             <harp:OperationMode>Active</harp:OperationMode>
                             <harp:OperationLed>On</harp:OperationLed>
                             <harp:DumpRegisters>true</harp:DumpRegisters>
@@ -186,10 +206,10 @@
                         <Expression xsi:type="MulticastSubject">
                           <Name>HarpSoundCardCommands</Name>
                         </Expression>
-                        <Expression xsi:type="p3:CreateMessage">
+                        <Expression xsi:type="p4:CreateMessage">
                           <harp:MessageType>Write</harp:MessageType>
-                          <harp:Payload xsi:type="p3:CreateStopPayload">
-                            <p3:Stop>0</p3:Stop>
+                          <harp:Payload xsi:type="p4:CreateStopPayload">
+                            <p4:Stop>0</p4:Stop>
                           </harp:Payload>
                         </Expression>
                         <Expression xsi:type="MulticastSubject">
@@ -217,10 +237,10 @@
                       <Property Name="AttenuationLeft" Selector="Attenuation" />
                     </PropertyMappings>
                   </Expression>
-                  <Expression xsi:type="p3:CreateMessage">
+                  <Expression xsi:type="p4:CreateMessage">
                     <harp:MessageType>Write</harp:MessageType>
-                    <harp:Payload xsi:type="p3:CreateAttenuationLeftPayload">
-                      <p3:AttenuationLeft>200</p3:AttenuationLeft>
+                    <harp:Payload xsi:type="p4:CreateAttenuationLeftPayload">
+                      <p4:AttenuationLeft>200</p4:AttenuationLeft>
                     </harp:Payload>
                   </Expression>
                   <Expression xsi:type="InputMapping">
@@ -228,10 +248,10 @@
                       <Property Name="PlaySoundOrFrequency" Selector="Index" />
                     </PropertyMappings>
                   </Expression>
-                  <Expression xsi:type="p3:CreateMessage">
+                  <Expression xsi:type="p4:CreateMessage">
                     <harp:MessageType>Write</harp:MessageType>
-                    <harp:Payload xsi:type="p3:CreatePlaySoundOrFrequencyPayload">
-                      <p3:PlaySoundOrFrequency>11</p3:PlaySoundOrFrequency>
+                    <harp:Payload xsi:type="p4:CreatePlaySoundOrFrequencyPayload">
+                      <p4:PlaySoundOrFrequency>11</p4:PlaySoundOrFrequency>
                     </harp:Payload>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -304,6 +324,104 @@
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="rx:Defer">
+        <Name>HardwareChecks</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="GroupWorkflow">
+              <Name>RepositoryValidation</Name>
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="SubscribeSubject">
+                    <Name>Repository</Name>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="p3:IsRepositoryClean">
+                      <p3:IgnoreUntracked>false</p3:IgnoreUntracked>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="BitwiseNot" />
+                  <Expression xsi:type="SubscribeSubject">
+                    <Name>SubjectSchema</Name>
+                  </Expression>
+                  <Expression xsi:type="MemberSelector">
+                    <Selector>AllowDirtyRepo</Selector>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Zip" />
+                  </Expression>
+                  <Expression xsi:type="scr:ExpressionTransform">
+                    <scr:Name>AllowDirty?</scr:Name>
+                    <scr:Expression>Item2 ? False : Item1</scr:Expression>
+                  </Expression>
+                  <Expression xsi:type="rx:Condition">
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="WorkflowInput">
+                          <Name>Source1</Name>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="1" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="p5:ThrowException">
+                      <p5:Message>Repository is not clean! Please discard all local changes.</p5:Message>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="1" To="2" Label="Source1" />
+                  <Edge From="2" To="5" Label="Source1" />
+                  <Edge From="3" To="4" Label="Source1" />
+                  <Edge From="4" To="5" Label="Source2" />
+                  <Edge From="5" To="6" Label="Source1" />
+                  <Edge From="6" To="7" Label="Source1" />
+                  <Edge From="7" To="8" Label="Source1" />
+                  <Edge From="8" To="9" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>SubjectSchema</Name>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>SkipHardwareValidation</Selector>
+            </Expression>
+            <Expression xsi:type="BitwiseNot" />
+            <Expression xsi:type="rx:Condition">
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="WorkflowInput">
+                    <Name>Source1</Name>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:SubscribeWhen" />
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="5" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="5" Label="Source2" />
+            <Edge From="5" To="6" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -398,7 +516,7 @@
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="rx:Timer">
-                                  <rx:DueTime>PT9.245S</rx:DueTime>
+                                  <rx:DueTime>PT3.083S</rx:DueTime>
                                 </Combinator>
                               </Expression>
                               <Expression xsi:type="SubscribeSubject">
@@ -728,7 +846,7 @@
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:RepeatCount">
-                      <rx:Count>7</rx:Count>
+                      <rx:Count>12</rx:Count>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
@@ -775,8 +893,8 @@
     </Nodes>
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
-      <Edge From="6" To="8" Label="Source1" />
-      <Edge From="7" To="8" Label="Source2" />
+      <Edge From="8" To="10" Label="Source1" />
+      <Edge From="9" To="10" Label="Source2" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
