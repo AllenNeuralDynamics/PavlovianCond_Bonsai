@@ -40,6 +40,7 @@ class AindPavlovianConditioningTaskParameters(TaskParameters):
     environment: BlockStructure
     min_iti: float
     reward_delay: float
+    reward_size: int = Field(default=24, ge=0)
     cs: SoundStimulus
 
 class AindPavlovianConitioningTaskLogic(AindBehaviorTaskLogicModel):

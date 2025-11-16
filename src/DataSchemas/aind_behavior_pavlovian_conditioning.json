@@ -192,6 +192,12 @@
           "title": "Reward Delay",
           "type": "number"
         },
+        "reward_size": {
+          "default": 24,
+          "minimum": 0,
+          "title": "Reward Size",
+          "type": "integer"
+        },
         "cs": {
           "$ref": "#/$defs/SoundStimulus"
         }

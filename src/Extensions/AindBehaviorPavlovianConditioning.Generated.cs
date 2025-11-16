@@ -511,12 +511,15 @@ namespace AindPavlovianConditioningDataSchema
     
         private double _rewardDelay;
     
+        private int _rewardSize;
+    
         private SoundStimulus _cs;
     
         public AindPavlovianConditioningTaskParameters()
         {
             _aindBehaviorServicesPkgVersion = "0.12.3";
             _environment = new BlockStructure();
+            _rewardSize = 24;
             _cs = new SoundStimulus();
         }
     
@@ -527,6 +530,7 @@ namespace AindPavlovianConditioningDataSchema
             _environment = other._environment;
             _minIti = other._minIti;
             _rewardDelay = other._rewardDelay;
+            _rewardSize = other._rewardSize;
             _cs = other._cs;
         }
     
@@ -601,6 +605,19 @@ namespace AindPavlovianConditioningDataSchema
             }
         }
     
+        [Newtonsoft.Json.JsonPropertyAttribute("reward_size")]
+        public int RewardSize
+        {
+            get
+            {
+                return _rewardSize;
+            }
+            set
+            {
+                _rewardSize = value;
+            }
+        }
+    
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [Newtonsoft.Json.JsonPropertyAttribute("cs", Required=Newtonsoft.Json.Required.Always)]
         public SoundStimulus Cs
@@ -632,6 +649,7 @@ namespace AindPavlovianConditioningDataSchema
             stringBuilder.Append("Environment = " + _environment + ", ");
             stringBuilder.Append("MinIti = " + _minIti + ", ");
             stringBuilder.Append("RewardDelay = " + _rewardDelay + ", ");
+            stringBuilder.Append("RewardSize = " + _rewardSize + ", ");
             stringBuilder.Append("Cs = " + _cs);
             return true;
         }
