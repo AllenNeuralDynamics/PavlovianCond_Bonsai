@@ -37,6 +37,7 @@
           <WindowSettings Index="4">
             <NestedLayout>
               <WindowSettings Index="2">
+                <Visible>false</Visible>
                 <Location>
                   <X>388</X>
                   <Y>485</Y>
@@ -66,6 +67,7 @@
                 </VisualizerSettings>
               </WindowSettings>
               <WindowSettings Index="4">
+                <Visible>false</Visible>
                 <Location>
                   <X>662</X>
                   <Y>326</Y>
@@ -101,8 +103,8 @@
               </WindowSettings>
               <WindowSettings Index="8">
                 <Location>
-                  <X>626</X>
-                  <Y>398</Y>
+                  <X>474</X>
+                  <Y>310</Y>
                 </Location>
                 <Size>
                   <Width>818</Width>
@@ -114,9 +116,10 @@
                 </VisualizerSettings>
               </WindowSettings>
               <WindowSettings Index="9">
+                <Visible>false</Visible>
                 <Location>
-                  <X>626</X>
-                  <Y>189</Y>
+                  <X>377</X>
+                  <Y>131</Y>
                 </Location>
                 <Size>
                   <Width>866</Width>
@@ -130,6 +133,80 @@
             </NestedLayout>
           </WindowSettings>
         </NestedLayout>
+      </WindowSettings>
+    </NestedLayout>
+  </WindowSettings>
+  <WindowSettings Index="14">
+    <Visible>false</Visible>
+    <Location>
+      <X>120</X>
+      <Y>130</Y>
+    </Location>
+    <Size>
+      <Width>334</Width>
+      <Height>64</Height>
+    </Size>
+    <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+    <VisualizerSettings>
+      <ObjectTextVisualizer />
+    </VisualizerSettings>
+    <NestedLayout>
+      <WindowSettings Index="5">
+        <Visible>false</Visible>
+        <Location>
+          <X>168</X>
+          <Y>182</Y>
+        </Location>
+        <Size>
+          <Width>936</Width>
+          <Height>81</Height>
+        </Size>
+        <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+        <VisualizerSettings>
+          <ObjectTextVisualizer />
+        </VisualizerSettings>
+      </WindowSettings>
+      <WindowSettings Index="6">
+        <Location>
+          <X>72</X>
+          <Y>78</Y>
+        </Location>
+        <Size>
+          <Width>628</Width>
+          <Height>81</Height>
+        </Size>
+        <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+        <VisualizerSettings>
+          <ObjectTextVisualizer />
+        </VisualizerSettings>
+      </WindowSettings>
+      <WindowSettings Index="9">
+        <Location>
+          <X>70</X>
+          <Y>141</Y>
+        </Location>
+        <Size>
+          <Width>631</Width>
+          <Height>81</Height>
+        </Size>
+        <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+        <VisualizerSettings>
+          <ObjectTextVisualizer />
+        </VisualizerSettings>
+      </WindowSettings>
+      <WindowSettings Index="12">
+        <Location>
+          <X>71</X>
+          <Y>203</Y>
+        </Location>
+        <Size>
+          <Width>846</Width>
+          <Height>81</Height>
+        </Size>
+        <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+        <VisualizerSettings>
+          <ObjectTextVisualizer />
+        </VisualizerSettings>
       </WindowSettings>
     </NestedLayout>
   </WindowSettings>
