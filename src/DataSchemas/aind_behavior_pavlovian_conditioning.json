@@ -197,16 +197,12 @@
           "minimum": 0,
           "title": "Reward Size",
           "type": "integer"
-        },
-        "cs": {
-          "$ref": "#/$defs/SoundStimulus"
         }
       },
       "required": [
         "environment",
         "min_iti",
-        "reward_delay",
-        "cs"
+        "reward_delay"
       ],
       "title": "AindPavlovianConditioningTaskParameters",
       "type": "object"
@@ -451,12 +447,12 @@
           },
           "description": "The distribution from which the reward choice will be drawn from"
         },
-        "reward_probability_p": {
-          "default": 0.5,
-          "maximum": 1,
-          "minimum": 0,
-          "title": "Reward Probability P",
-          "type": "number"
+        "trial_options": {
+          "items": {
+            "$ref": "#/$defs/WeightedTrial"
+          },
+          "title": "Trial Options",
+          "type": "array"
         },
         "name": {
           "title": "Name",
@@ -464,6 +460,7 @@
         }
       },
       "required": [
+        "trial_options",
         "name"
       ],
       "title": "Block",
@@ -1208,6 +1205,25 @@
       "title": "SoundStimulus",
       "type": "object"
     },
+    "TrialDefinition": {
+      "properties": {
+        "reward_probability": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Reward Probability",
+          "type": "number"
+        },
+        "stimulus": {
+          "$ref": "#/$defs/SoundStimulus"
+        }
+      },
+      "required": [
+        "stimulus"
+      ],
+      "title": "TrialDefinition",
+      "type": "object"
+    },
     "TruncationParameters": {
       "description": "Parameters for truncating a distribution to a specified range. Truncation should\nbe applied after sampling and scaling.\n\nThe truncation_mode determines how out-of-bounds values are handled:\n- \"exclude\": Resample until a value within [min, max] is obtained.\nIf after a certain number of attempts no valid value is found, it\nwill use the average of sampled values and pick the closest bound.\n- \"clamp\": Clamp values to the nearest bound within [min, max].\nUsed to constrain sampled values within minimum and maximum bounds.",
       "properties": {
@@ -1306,6 +1322,25 @@
         }
       },
       "title": "UniformDistributionParameters",
+      "type": "object"
+    },
+    "WeightedTrial": {
+      "properties": {
+        "trial": {
+          "$ref": "#/$defs/TrialDefinition"
+        },
+        "weight": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Weight",
+          "type": "number"
+        }
+      },
+      "required": [
+        "trial"
+      ],
+      "title": "WeightedTrial",
       "type": "object"
     }
   }

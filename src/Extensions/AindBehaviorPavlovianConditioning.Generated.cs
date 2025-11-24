@@ -513,14 +513,11 @@ namespace AindPavlovianConditioningDataSchema
     
         private int _rewardSize;
     
-        private SoundStimulus _cs;
-    
         public AindPavlovianConditioningTaskParameters()
         {
             _aindBehaviorServicesPkgVersion = "0.12.3";
             _environment = new BlockStructure();
             _rewardSize = 24;
-            _cs = new SoundStimulus();
         }
     
         protected AindPavlovianConditioningTaskParameters(AindPavlovianConditioningTaskParameters other)
@@ -531,7 +528,6 @@ namespace AindPavlovianConditioningDataSchema
             _minIti = other._minIti;
             _rewardDelay = other._rewardDelay;
             _rewardSize = other._rewardSize;
-            _cs = other._cs;
         }
     
         /// <summary>
@@ -618,20 +614,6 @@ namespace AindPavlovianConditioningDataSchema
             }
         }
     
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [Newtonsoft.Json.JsonPropertyAttribute("cs", Required=Newtonsoft.Json.Required.Always)]
-        public SoundStimulus Cs
-        {
-            get
-            {
-                return _cs;
-            }
-            set
-            {
-                _cs = value;
-            }
-        }
-    
         public System.IObservable<AindPavlovianConditioningTaskParameters> Generate()
         {
             return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new AindPavlovianConditioningTaskParameters(this)));
@@ -649,8 +631,7 @@ namespace AindPavlovianConditioningDataSchema
             stringBuilder.Append("Environment = " + _environment + ", ");
             stringBuilder.Append("MinIti = " + _minIti + ", ");
             stringBuilder.Append("RewardDelay = " + _rewardDelay + ", ");
-            stringBuilder.Append("RewardSize = " + _rewardSize + ", ");
-            stringBuilder.Append("Cs = " + _cs);
+            stringBuilder.Append("RewardSize = " + _rewardSize);
             return true;
         }
     
@@ -1322,7 +1303,7 @@ namespace AindPavlovianConditioningDataSchema
     
         private Distribution _rewardSelection;
     
-        private double _rewardProbabilityP;
+        private System.Collections.Generic.List<WeightedTrial> _trialOptions;
     
         private string _name;
     
@@ -1331,7 +1312,7 @@ namespace AindPavlovianConditioningDataSchema
             _length = new Distribution();
             _interTrialInterval = new Distribution();
             _rewardSelection = new Distribution();
-            _rewardProbabilityP = 0.5D;
+            _trialOptions = new System.Collections.Generic.List<WeightedTrial>();
         }
     
         protected Block(Block other)
@@ -1339,7 +1320,7 @@ namespace AindPavlovianConditioningDataSchema
             _length = other._length;
             _interTrialInterval = other._interTrialInterval;
             _rewardSelection = other._rewardSelection;
-            _rewardProbabilityP = other._rewardProbabilityP;
+            _trialOptions = other._trialOptions;
             _name = other._name;
         }
     
@@ -1397,16 +1378,17 @@ namespace AindPavlovianConditioningDataSchema
             }
         }
     
-        [Newtonsoft.Json.JsonPropertyAttribute("reward_probability_p")]
-        public double RewardProbabilityP
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("trial_options", Required=Newtonsoft.Json.Required.Always)]
+        public System.Collections.Generic.List<WeightedTrial> TrialOptions
         {
             get
             {
-                return _rewardProbabilityP;
+                return _trialOptions;
             }
             set
             {
-                _rewardProbabilityP = value;
+                _trialOptions = value;
             }
         }
     
@@ -1438,7 +1420,7 @@ namespace AindPavlovianConditioningDataSchema
             stringBuilder.Append("Length = " + _length + ", ");
             stringBuilder.Append("InterTrialInterval = " + _interTrialInterval + ", ");
             stringBuilder.Append("RewardSelection = " + _rewardSelection + ", ");
-            stringBuilder.Append("RewardProbabilityP = " + _rewardProbabilityP + ", ");
+            stringBuilder.Append("TrialOptions = " + _trialOptions + ", ");
             stringBuilder.Append("Name = " + _name);
             return true;
         }
@@ -3628,6 +3610,87 @@ namespace AindPavlovianConditioningDataSchema
     }
 
 
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
+    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
+    [Bonsai.CombinatorAttribute(MethodName="Generate")]
+    public partial class TrialDefinition
+    {
+    
+        private double _rewardProbability;
+    
+        private SoundStimulus _stimulus;
+    
+        public TrialDefinition()
+        {
+            _rewardProbability = 0.5D;
+            _stimulus = new SoundStimulus();
+        }
+    
+        protected TrialDefinition(TrialDefinition other)
+        {
+            _rewardProbability = other._rewardProbability;
+            _stimulus = other._stimulus;
+        }
+    
+        [Newtonsoft.Json.JsonPropertyAttribute("reward_probability")]
+        public double RewardProbability
+        {
+            get
+            {
+                return _rewardProbability;
+            }
+            set
+            {
+                _rewardProbability = value;
+            }
+        }
+    
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("stimulus", Required=Newtonsoft.Json.Required.Always)]
+        public SoundStimulus Stimulus
+        {
+            get
+            {
+                return _stimulus;
+            }
+            set
+            {
+                _stimulus = value;
+            }
+        }
+    
+        public System.IObservable<TrialDefinition> Generate()
+        {
+            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new TrialDefinition(this)));
+        }
+    
+        public System.IObservable<TrialDefinition> Generate<TSource>(System.IObservable<TSource> source)
+        {
+            return System.Reactive.Linq.Observable.Select(source, _ => new TrialDefinition(this));
+        }
+    
+        protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
+        {
+            stringBuilder.Append("RewardProbability = " + _rewardProbability + ", ");
+            stringBuilder.Append("Stimulus = " + _stimulus);
+            return true;
+        }
+    
+        public override string ToString()
+        {
+            System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+            stringBuilder.Append(GetType().Name);
+            stringBuilder.Append(" { ");
+            if (PrintMembers(stringBuilder))
+            {
+                stringBuilder.Append(" ");
+            }
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
+        }
+    }
+
+
     /// <summary>
     /// Parameters for truncating a distribution to a specified range. Truncation should
     ///be applied after sampling and scaling.
@@ -3964,6 +4027,87 @@ namespace AindPavlovianConditioningDataSchema
             stringBuilder.Append("Family = " + _family + ", ");
             stringBuilder.Append("Min = " + _min + ", ");
             stringBuilder.Append("Max = " + _max);
+            return true;
+        }
+    
+        public override string ToString()
+        {
+            System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+            stringBuilder.Append(GetType().Name);
+            stringBuilder.Append(" { ");
+            if (PrintMembers(stringBuilder))
+            {
+                stringBuilder.Append(" ");
+            }
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
+        }
+    }
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
+    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
+    [Bonsai.CombinatorAttribute(MethodName="Generate")]
+    public partial class WeightedTrial
+    {
+    
+        private TrialDefinition _trial;
+    
+        private double _weight;
+    
+        public WeightedTrial()
+        {
+            _trial = new TrialDefinition();
+            _weight = 0.5D;
+        }
+    
+        protected WeightedTrial(WeightedTrial other)
+        {
+            _trial = other._trial;
+            _weight = other._weight;
+        }
+    
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("trial", Required=Newtonsoft.Json.Required.Always)]
+        public TrialDefinition Trial
+        {
+            get
+            {
+                return _trial;
+            }
+            set
+            {
+                _trial = value;
+            }
+        }
+    
+        [Newtonsoft.Json.JsonPropertyAttribute("weight")]
+        public double Weight
+        {
+            get
+            {
+                return _weight;
+            }
+            set
+            {
+                _weight = value;
+            }
+        }
+    
+        public System.IObservable<WeightedTrial> Generate()
+        {
+            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new WeightedTrial(this)));
+        }
+    
+        public System.IObservable<WeightedTrial> Generate<TSource>(System.IObservable<TSource> source)
+        {
+            return System.Reactive.Linq.Observable.Select(source, _ => new WeightedTrial(this));
+        }
+    
+        protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
+        {
+            stringBuilder.Append("Trial = " + _trial + ", ");
+            stringBuilder.Append("Weight = " + _weight);
             return true;
         }
     
@@ -4605,6 +4749,11 @@ namespace AindPavlovianConditioningDataSchema
             return Process<SoundStimulus>(source);
         }
 
+        public System.IObservable<string> Process(System.IObservable<TrialDefinition> source)
+        {
+            return Process<TrialDefinition>(source);
+        }
+
         public System.IObservable<string> Process(System.IObservable<TruncationParameters> source)
         {
             return Process<TruncationParameters>(source);
@@ -4618,6 +4767,11 @@ namespace AindPavlovianConditioningDataSchema
         public System.IObservable<string> Process(System.IObservable<UniformDistributionParameters> source)
         {
             return Process<UniformDistributionParameters>(source);
+        }
+
+        public System.IObservable<string> Process(System.IObservable<WeightedTrial> source)
+        {
+            return Process<WeightedTrial>(source);
         }
 
         public System.IObservable<string> Process(System.IObservable<InterTrialInterval> source)
@@ -4679,9 +4833,11 @@ namespace AindPavlovianConditioningDataSchema
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ScalarDistributionParameter>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ScalingParameters>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<SoundStimulus>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<TrialDefinition>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<TruncationParameters>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<UniformDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<UniformDistributionParameters>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<WeightedTrial>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<InterTrialInterval>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<RewardSelection>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<TruncationParameters2>))]

@@ -14,6 +14,18 @@ from aind_behavior_pavlovian_conditioning import (
 
 logger = logging.getLogger(__name__)
 
+class SoundStimulus(BaseModel):
+    index: int = Field(default=11, ge=0)
+    attenuation: float = Field(default=200, ge=0)
+    
+class TrialDefinition(BaseModel):
+    reward_probability: float = Field(default=0.5, ge=0, le=1)
+    stimulus: SoundStimulus
+
+class WeightedTrial(BaseModel):
+    trial: TrialDefinition
+    weight: float = Field(default=0.5, ge=0, le=1)
+    
 class Block(BaseModel):
     length: distributions.Distribution = Field(
         default = distributions.ExponentialDistribution(),
@@ -27,21 +39,17 @@ class Block(BaseModel):
         default = distributions.UniformDistribution(distribution_parameters=distributions.UniformDistributionParameters(min=0, max=1)),
         description="The distribution from which the reward choice will be drawn from"
     )
-    reward_probability_p: float = Field(default=0.5, ge=0, le=1)
+    trial_options: List[WeightedTrial]
     name: str
-
+    
 class BlockStructure(BaseModel):
     blocks: List[Block]
     
-class SoundStimulus(BaseModel):
-    index: int = Field(default=11, ge=0)
-    attenuation: float = Field(default=200, ge=0)
 class AindPavlovianConditioningTaskParameters(TaskParameters):
     environment: BlockStructure
     min_iti: float
     reward_delay: float
     reward_size: int = Field(default=24, ge=0)
-    cs: SoundStimulus
 
 class AindPavlovianConitioningTaskLogic(AindBehaviorTaskLogicModel):
     version: Literal[__semver__] = __semver__
