@@ -39,6 +39,10 @@ class Block(BaseModel):
         default = distributions.UniformDistribution(distribution_parameters=distributions.UniformDistributionParameters(min=0, max=1)),
         description="The distribution from which the reward choice will be drawn from"
     )
+    trial_selection: distributions.Distribution = Field(
+        default = distributions.UniformDistribution(distribution_parameters=distributions.UniformDistributionParameters(min=0, max=1)),
+        description="The distribution from which the trial choice will be drawn from"
+    )
     trial_options: List[WeightedTrial]
     name: str
     

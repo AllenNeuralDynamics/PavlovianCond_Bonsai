@@ -447,6 +447,20 @@
           },
           "description": "The distribution from which the reward choice will be drawn from"
         },
+        "trial_selection": {
+          "$ref": "#/$defs/Distribution",
+          "default": {
+            "family": "Uniform",
+            "distribution_parameters": {
+              "family": "Uniform",
+              "max": 1.0,
+              "min": 0.0
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
+          "description": "The distribution from which the trial choice will be drawn from"
+        },
         "trial_options": {
           "items": {
             "$ref": "#/$defs/WeightedTrial"

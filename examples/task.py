@@ -35,8 +35,9 @@ task_logic = AindPavlovianConitioningTaskLogic(
                             )
                         ),
                         trial_options=[
-                            WeightedTrial(trial=TrialDefinition(reward_probability=0.9, stimulus=SoundStimulus(index=11, attenuation=200)), weight=0.9),
-                            WeightedTrial(trial=TrialDefinition(reward_probability=0.5, stimulus=SoundStimulus(index=10, attenuation=200)), weight=0.1)
+                            WeightedTrial(trial=TrialDefinition(reward_probability=0.4, stimulus=SoundStimulus(index=11, attenuation=200)), weight=0.4),
+                            WeightedTrial(trial=TrialDefinition(reward_probability=0.4, stimulus=SoundStimulus(index=10, attenuation=200)), weight=0.4),
+                            WeightedTrial(trial=TrialDefinition(reward_probability=0.2, stimulus=SoundStimulus(index=9, attenuation=200)), weight=0.2),
                         ]
                     )
                 ]

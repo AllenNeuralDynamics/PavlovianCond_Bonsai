@@ -35,26 +35,46 @@
             "truncation_parameters": null,
             "scaling_parameters": null
           },
+          "trial_selection": {
+            "family": "Uniform",
+            "distribution_parameters": {
+              "family": "Uniform",
+              "min": 0.0,
+              "max": 1.0
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
           "trial_options": [
             {
               "trial": {
-                "reward_probability": 0.9,
+                "reward_probability": 0.4,
                 "stimulus": {
                   "index": 11,
                   "attenuation": 200.0
                 }
               },
-              "weight": 0.9
+              "weight": 0.4
             },
             {
               "trial": {
-                "reward_probability": 0.5,
+                "reward_probability": 0.4,
                 "stimulus": {
                   "index": 10,
                   "attenuation": 200.0
                 }
               },
-              "weight": 0.1
+              "weight": 0.4
+            },
+            {
+              "trial": {
+                "reward_probability": 0.2,
+                "stimulus": {
+                  "index": 9,
+                  "attenuation": 200.0
+                }
+              },
+              "weight": 0.2
             }
           ],
           "name": "test_block"
