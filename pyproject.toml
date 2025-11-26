@@ -1,0 +1,54 @@
+[build-system]
+requires = ["uv_build>=0.8.22"]
+build-backend = "uv_build"
+
+[project]
+name = "aind-behavior-pavlovian-conditioning"
+description = "A library that defines AIND data schema for the Aind Behavior Pavlovian Conditioning experiment."
+authors = [ {name = "Andrew Erskine", email = "a.erskine@neurogears.org"}]
+license = "MIT"
+requires-python = ">=3.11, <3.12"
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: Microsoft :: Windows",
+]
+version = "0.0.1"
+readme = {file = "README.md", content-type = "text/markdown"}
+
+dependencies = [
+  "aind_behavior_services>=0.12, <0.13",
+  "pydantic-settings"
+]
+
+[project.optional-dependencies]
+
+data = ["contraqctor<0.6.0"]
+
+launcher = [
+    "aind-clabe[aind-services] >= 0.8.2 ,<0.9.0",
+    "aind-data-schema>=2",
+    "aind_behavior_pavlovian_conditioning[data]",
+    ]
+
+[dependency-groups]
+
+dev = [
+    "aind_behavior_vr_foraging[launcher]",
+    "aind_behavior_vr_foraging[data]",
+    "ruff",
+    "codespell"
+]
+
+docs = [
+    'Sphinx',
+    'furo',
+    'sphinx-jinja',
+    'autodoc_pydantic[erdantic]',
+    'myst_parser',
+    'sphinx-jsonschema',
+    "aind_behavior_vr_foraging[data]",  # Necessary for the data contract rendering
+]
+
+[tool.uv]
+default-groups = ['dev']
+required-version = '>=0.8.4'

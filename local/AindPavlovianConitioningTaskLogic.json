@@ -1,0 +1,90 @@
+{
+  "name": "AindPavlovianConditioning",
+  "description": "",
+  "task_parameters": {
+    "rng_seed": 0.0,
+    "aind_behavior_services_pkg_version": "0.12.3",
+    "environment": {
+      "blocks": [
+        {
+          "length": {
+            "family": "Exponential",
+            "distribution_parameters": {
+              "family": "Exponential",
+              "rate": 0.1
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
+          "inter_trial_interval": {
+            "family": "Exponential",
+            "distribution_parameters": {
+              "family": "Exponential",
+              "rate": 0.5
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
+          "reward_selection": {
+            "family": "Uniform",
+            "distribution_parameters": {
+              "family": "Uniform",
+              "min": 0.0,
+              "max": 1.0
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
+          "trial_selection": {
+            "family": "Uniform",
+            "distribution_parameters": {
+              "family": "Uniform",
+              "min": 0.0,
+              "max": 1.0
+            },
+            "truncation_parameters": null,
+            "scaling_parameters": null
+          },
+          "trial_options": [
+            {
+              "trial": {
+                "reward_probability": 0.4,
+                "stimulus": {
+                  "index": 11,
+                  "attenuation": 200.0
+                }
+              },
+              "weight": 0.4
+            },
+            {
+              "trial": {
+                "reward_probability": 0.4,
+                "stimulus": {
+                  "index": 10,
+                  "attenuation": 200.0
+                }
+              },
+              "weight": 0.4
+            },
+            {
+              "trial": {
+                "reward_probability": 0.2,
+                "stimulus": {
+                  "index": 9,
+                  "attenuation": 200.0
+                }
+              },
+              "weight": 0.2
+            }
+          ],
+          "name": "test_block"
+        }
+      ]
+    },
+    "min_iti": 3.0,
+    "reward_delay": 0.1,
+    "reward_size": 24
+  },
+  "version": "0.0.1",
+  "stage_name": "test_stage"
+}

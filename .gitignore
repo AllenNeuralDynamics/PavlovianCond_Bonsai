@@ -151,3 +151,4 @@ Bonsai.exe.WebView2
 *.exe
 *.exe.settings
 .venv
+temp_data/
