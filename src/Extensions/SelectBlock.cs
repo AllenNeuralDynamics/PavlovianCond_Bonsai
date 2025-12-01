@@ -13,7 +13,7 @@ public class SelectBlock
 {
     private Random rng = new Random();
 
-    // 
+    // Select a random block from a block list
     public IObservable<Block> Process(IObservable<List<Block>> source)
     {
         return source.Select(value => {
@@ -21,6 +21,7 @@ public class SelectBlock
         }); 
     }
 
+    // Select a random block from a block list without repeating the reference/current block
     public IObservable<Block> Process(IObservable<Tuple<List<Block>, Block>> source)
     {
         return source.Select(value =>
