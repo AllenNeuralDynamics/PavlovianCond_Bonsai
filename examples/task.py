@@ -23,7 +23,7 @@ task_logic = AindPavlovianConitioningTaskLogic(
         reward_delay=0.1,
         environment=conditioning_task_logic.BlockStructure(
             blocks=[conditioning_task_logic.Block(
-                        name='test_block',
+                        name='test_block_1',
                         length=distributions.ExponentialDistribution(
                             distribution_parameters=distributions.ExponentialDistributionParameters(
                                 rate=0.1
@@ -38,6 +38,23 @@ task_logic = AindPavlovianConitioningTaskLogic(
                             WeightedTrial(trial=TrialDefinition(reward_probability=0.4, stimulus=SoundStimulus(index=11, attenuation=200)), weight=0.4),
                             WeightedTrial(trial=TrialDefinition(reward_probability=0.4, stimulus=SoundStimulus(index=10, attenuation=200)), weight=0.4),
                             WeightedTrial(trial=TrialDefinition(reward_probability=0.2, stimulus=SoundStimulus(index=9, attenuation=200)), weight=0.2),
+                        ]
+                    ),
+                    conditioning_task_logic.Block(
+                        name='test_block_2',
+                        length=distributions.ExponentialDistribution(
+                            distribution_parameters=distributions.ExponentialDistributionParameters(
+                                rate=0.1
+                            ) 
+                        ),
+                        inter_trial_interval=distributions.ExponentialDistribution(
+                            distribution_parameters=distributions.ExponentialDistributionParameters(
+                                rate=0.5
+                            )
+                        ),
+                        trial_options=[
+                            WeightedTrial(trial=TrialDefinition(reward_probability=0.4, stimulus=SoundStimulus(index=11, attenuation=200)), weight=0.5),
+                            WeightedTrial(trial=TrialDefinition(reward_probability=0.4, stimulus=SoundStimulus(index=10, attenuation=200)), weight=0.5)
                         ]
                     )
                 ]
