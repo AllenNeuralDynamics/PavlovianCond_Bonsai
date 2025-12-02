@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VisualizerLayout Version="2.9.0">
-  <WindowSettings Index="9">
+  <WindowSettings Index="8">
     <Visible>false</Visible>
     <Location>
       <X>144</X>
@@ -19,12 +19,12 @@
     <NestedLayout>
       <WindowSettings Index="8">
         <Location>
-          <X>-157</X>
-          <Y>-1180</Y>
+          <X>144</X>
+          <Y>156</Y>
         </Location>
         <Size>
-          <Width>1178</Width>
-          <Height>146</Height>
+          <Width>334</Width>
+          <Height>81</Height>
         </Size>
         <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
         <VisualizerSettings>
@@ -33,12 +33,12 @@
       </WindowSettings>
       <WindowSettings Index="9">
         <Location>
-          <X>-11</X>
-          <Y>-1029</Y>
+          <X>168</X>
+          <Y>182</Y>
         </Location>
         <Size>
-          <Width>962</Width>
-          <Height>175</Height>
+          <Width>334</Width>
+          <Height>81</Height>
         </Size>
         <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
         <VisualizerSettings>
@@ -66,12 +66,12 @@
             <NestedLayout>
               <WindowSettings Index="9">
                 <Location>
-                  <X>1024</X>
-                  <Y>-1177</Y>
+                  <X>80</X>
+                  <Y>78</Y>
                 </Location>
                 <Size>
-                  <Width>692</Width>
-                  <Height>287</Height>
+                  <Width>334</Width>
+                  <Height>438</Height>
                 </Size>
                 <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
                 <VisualizerSettings>
@@ -100,5 +100,34 @@
         </VisualizerSettings>
       </WindowSettings>
     </NestedLayout>
+  </WindowSettings>
+  <WindowSettings Index="24">
+    <Location>
+      <X>506</X>
+      <Y>149</Y>
+    </Location>
+    <Size>
+      <Width>432</Width>
+      <Height>233</Height>
+    </Size>
+    <VisualizerTypeName>Bonsai.Gui.TableLayoutPanelVisualizer</VisualizerTypeName>
+    <VisualizerSettings>
+      <TableLayoutPanelVisualizer>
+        <MashupSettings>
+          <Source>18</Source>
+          <VisualizerTypeName>Bonsai.Gui.ButtonVisualizer</VisualizerTypeName>
+          <VisualizerSettings>
+            <ButtonVisualizer />
+          </VisualizerSettings>
+        </MashupSettings>
+        <MashupSettings>
+          <Source>21</Source>
+          <VisualizerTypeName>Bonsai.Gui.ButtonVisualizer</VisualizerTypeName>
+          <VisualizerSettings>
+            <ButtonVisualizer />
+          </VisualizerSettings>
+        </MashupSettings>
+      </TableLayoutPanelVisualizer>
+    </VisualizerSettings>
   </WindowSettings>
 </VisualizerLayout>
