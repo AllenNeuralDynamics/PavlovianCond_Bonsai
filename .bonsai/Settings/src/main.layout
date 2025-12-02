@@ -71,7 +71,7 @@
                 </Location>
                 <Size>
                   <Width>334</Width>
-                  <Height>81</Height>
+                  <Height>438</Height>
                 </Size>
                 <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
                 <VisualizerSettings>
@@ -114,14 +114,14 @@
     <VisualizerSettings>
       <TableLayoutPanelVisualizer>
         <MashupSettings>
-          <Source>19</Source>
+          <Source>18</Source>
           <VisualizerTypeName>Bonsai.Gui.ButtonVisualizer</VisualizerTypeName>
           <VisualizerSettings>
             <ButtonVisualizer />
           </VisualizerSettings>
         </MashupSettings>
         <MashupSettings>
-          <Source>22</Source>
+          <Source>21</Source>
           <VisualizerTypeName>Bonsai.Gui.ButtonVisualizer</VisualizerTypeName>
           <VisualizerSettings>
             <ButtonVisualizer />
