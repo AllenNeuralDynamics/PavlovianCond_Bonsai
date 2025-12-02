@@ -1,114 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VisualizerLayout Version="2.9.0">
-  <WindowSettings Index="8">
-    <Visible>false</Visible>
+  <WindowSettings Index="37">
     <Location>
-      <X>144</X>
-      <Y>156</Y>
+      <X>620</X>
+      <Y>-1209</Y>
     </Location>
     <Size>
-      <Width>413</Width>
-      <Height>278</Height>
-    </Size>
-    <VisualizerTypeName>Bonsai.Design.Visualizers.BooleanTimeSeriesVisualizer</VisualizerTypeName>
-    <VisualizerSettings>
-      <BooleanTimeSeriesVisualizer>
-        <Capacity>640</Capacity>
-      </BooleanTimeSeriesVisualizer>
-    </VisualizerSettings>
-    <NestedLayout>
-      <WindowSettings Index="8">
-        <Location>
-          <X>144</X>
-          <Y>156</Y>
-        </Location>
-        <Size>
-          <Width>334</Width>
-          <Height>81</Height>
-        </Size>
-        <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
-        <VisualizerSettings>
-          <ObjectTextVisualizer />
-        </VisualizerSettings>
-      </WindowSettings>
-      <WindowSettings Index="9">
-        <Location>
-          <X>168</X>
-          <Y>182</Y>
-        </Location>
-        <Size>
-          <Width>334</Width>
-          <Height>81</Height>
-        </Size>
-        <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
-        <VisualizerSettings>
-          <ObjectTextVisualizer />
-        </VisualizerSettings>
-      </WindowSettings>
-      <WindowSettings Index="11">
-        <NestedLayout>
-          <WindowSettings Index="4">
-            <Visible>false</Visible>
-            <Location>
-              <X>24</X>
-              <Y>26</Y>
-            </Location>
-            <Size>
-              <Width>413</Width>
-              <Height>278</Height>
-            </Size>
-            <VisualizerTypeName>Bonsai.Design.Visualizers.BooleanTimeSeriesVisualizer</VisualizerTypeName>
-            <VisualizerSettings>
-              <BooleanTimeSeriesVisualizer>
-                <Capacity>640</Capacity>
-              </BooleanTimeSeriesVisualizer>
-            </VisualizerSettings>
-            <NestedLayout>
-              <WindowSettings Index="9">
-                <Location>
-                  <X>80</X>
-                  <Y>78</Y>
-                </Location>
-                <Size>
-                  <Width>406</Width>
-                  <Height>438</Height>
-                </Size>
-                <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
-                <VisualizerSettings>
-                  <ObjectTextVisualizer />
-                </VisualizerSettings>
-              </WindowSettings>
-            </NestedLayout>
-          </WindowSettings>
-        </NestedLayout>
-      </WindowSettings>
-      <WindowSettings Index="12">
-        <Visible>false</Visible>
-        <Location>
-          <X>168</X>
-          <Y>182</Y>
-        </Location>
-        <Size>
-          <Width>413</Width>
-          <Height>278</Height>
-        </Size>
-        <VisualizerTypeName>Bonsai.Design.Visualizers.BooleanTimeSeriesVisualizer</VisualizerTypeName>
-        <VisualizerSettings>
-          <BooleanTimeSeriesVisualizer>
-            <Capacity>640</Capacity>
-          </BooleanTimeSeriesVisualizer>
-        </VisualizerSettings>
-      </WindowSettings>
-    </NestedLayout>
-  </WindowSettings>
-  <WindowSettings Index="35">
-    <Location>
-      <X>506</X>
-      <Y>149</Y>
-    </Location>
-    <Size>
-      <Width>432</Width>
-      <Height>303</Height>
+      <Width>254</Width>
+      <Height>233</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Gui.TableLayoutPanelVisualizer</VisualizerTypeName>
     <VisualizerSettings>
@@ -127,7 +26,28 @@
             <ButtonVisualizer />
           </VisualizerSettings>
         </MashupSettings>
+        <MashupSettings>
+          <Source>35</Source>
+          <VisualizerTypeName>AllenNeuralDynamics.Core.Design.SoftwareEventVisualizer</VisualizerTypeName>
+          <VisualizerSettings>
+            <SoftwareEventVisualizer />
+          </VisualizerSettings>
+        </MashupSettings>
       </TableLayoutPanelVisualizer>
+    </VisualizerSettings>
+  </WindowSettings>
+  <WindowSettings Index="40">
+    <Location>
+      <X>-53</X>
+      <Y>-1176</Y>
+    </Location>
+    <Size>
+      <Width>651</Width>
+      <Height>283</Height>
+    </Size>
+    <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+    <VisualizerSettings>
+      <ObjectTextVisualizer />
     </VisualizerSettings>
   </WindowSettings>
 </VisualizerLayout>
