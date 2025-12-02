@@ -70,7 +70,7 @@
                   <Y>78</Y>
                 </Location>
                 <Size>
-                  <Width>334</Width>
+                  <Width>406</Width>
                   <Height>438</Height>
                 </Size>
                 <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
@@ -101,27 +101,27 @@
       </WindowSettings>
     </NestedLayout>
   </WindowSettings>
-  <WindowSettings Index="24">
+  <WindowSettings Index="35">
     <Location>
       <X>506</X>
       <Y>149</Y>
     </Location>
     <Size>
       <Width>432</Width>
-      <Height>233</Height>
+      <Height>303</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Gui.TableLayoutPanelVisualizer</VisualizerTypeName>
     <VisualizerSettings>
       <TableLayoutPanelVisualizer>
         <MashupSettings>
-          <Source>18</Source>
+          <Source>29</Source>
           <VisualizerTypeName>Bonsai.Gui.ButtonVisualizer</VisualizerTypeName>
           <VisualizerSettings>
             <ButtonVisualizer />
           </VisualizerSettings>
         </MashupSettings>
         <MashupSettings>
-          <Source>21</Source>
+          <Source>32</Source>
           <VisualizerTypeName>Bonsai.Gui.ButtonVisualizer</VisualizerTypeName>
           <VisualizerSettings>
             <ButtonVisualizer />

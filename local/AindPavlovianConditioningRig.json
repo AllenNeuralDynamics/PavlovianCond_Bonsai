@@ -20,5 +20,68 @@
     "who_am_i": 1280,
     "serial_number": null,
     "port_name": "COM8"
+  },
+  "triggered_camera_controller": {
+    "device_type": "CameraController",
+    "name": "CameraController",
+    "additional_settings": null,
+    "calibration": null,
+    "cameras": {
+      "FaceCamera": {
+        "device_type": "SpinnakerCamera",
+        "name": "SpinnakerCamera",
+        "additional_settings": null,
+        "calibration": null,
+        "serial_number": "SerialNumber",
+        "binning": 1,
+        "color_processing": "Default",
+        "exposure": 5000,
+        "gain": 0.0,
+        "gamma": null,
+        "adc_bit_depth": 0,
+        "pixel_format": 0,
+        "region_of_interest": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "video_writer": {
+          "video_writer_type": "FFMPEG",
+          "frame_rate": 60,
+          "container_extension": "mp4",
+          "output_arguments": "-vf \"scale=out_color_matrix=bt709:out_range=full,format=bgr24,scale=out_range=full\" -c:v h264_nvenc -pix_fmt yuv420p -color_range full -colorspace bt709 -color_trc linear -tune hq -preset p4 -rc vbr -cq 12 -b:v 0M -metadata author=\"Allen Institute for Neural Dynamics\" -maxrate 700M -bufsize 350M",
+          "input_arguments": "-colorspace bt709 -color_primaries bt709 -color_range full -color_trc linear"
+        }
+      },
+      "BodyCamera": {
+        "device_type": "SpinnakerCamera",
+        "name": "SpinnakerCamera",
+        "additional_settings": null,
+        "calibration": null,
+        "serial_number": "SerialNumber",
+        "binning": 1,
+        "color_processing": "Default",
+        "exposure": 5000,
+        "gain": 0.0,
+        "gamma": null,
+        "adc_bit_depth": 0,
+        "pixel_format": 0,
+        "region_of_interest": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "video_writer": {
+          "video_writer_type": "FFMPEG",
+          "frame_rate": 60,
+          "container_extension": "mp4",
+          "output_arguments": "-vf \"scale=out_color_matrix=bt709:out_range=full,format=bgr24,scale=out_range=full\" -c:v h264_nvenc -pix_fmt yuv420p -color_range full -colorspace bt709 -color_trc linear -tune hq -preset p4 -rc vbr -cq 12 -b:v 0M -metadata author=\"Allen Institute for Neural Dynamics\" -maxrate 700M -bufsize 350M",
+          "input_arguments": "-colorspace bt709 -color_primaries bt709 -color_range full -color_trc linear"
+        }
+      }
+    },
+    "frame_rate": 60
   }
 }
