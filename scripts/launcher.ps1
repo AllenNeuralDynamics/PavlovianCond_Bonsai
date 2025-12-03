@@ -1,8 +1,11 @@
-# $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
-# Set-Location -Path (Split-Path -Parent $scriptPath)
-param([string]$SchemaFolder=".\examples")
+param([string]$SchemaFolder="examples")
 
-.\.venv\Scripts\Activate.ps1
-&python $SchemaFolder\session.py
-&python $SchemaFolder\rig.py
-&python $SchemaFolder\task.py
+$scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
+Set-Location -Path (Split-Path -Parent $scriptPath)
+
+. $scriptPath\..\.venv\Scripts\Activate.ps1
+&python $scriptPath\..\$SchemaFolder\session.py
+&python $scriptPath\..\$SchemaFolder\rig.py
+&python $scriptPath\..\$SchemaFolder\task.py
+
+& $scriptPath\..\.bonsai\bonsai.exe $scriptPath\..\src\main.bonsai -p SessionPath=$scriptPath\..\local\AindBehaviorSessionModel.json -p RigPath=$scriptPath\..\local\AindPavlovianConditioningRig.json -p TaskLogicPath=$scriptPath\..\local\AindPavlovianConditioningTaskLogic.json 
