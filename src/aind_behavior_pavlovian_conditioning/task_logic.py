@@ -55,7 +55,7 @@ class AindPavlovianConditioningTaskParameters(TaskParameters):
     reward_delay: float
     reward_size: int = Field(default=24, ge=0)
 
-class AindPavlovianConitioningTaskLogic(AindBehaviorTaskLogicModel):
+class AindPavlovianConditioningTaskLogic(AindBehaviorTaskLogicModel):
     version: Literal[__semver__] = __semver__
     name: Literal["AindPavlovianConditioning"] = Field(default="AindPavlovianConditioning", description="Name of the task logic", frozen=True)
     task_parameters: AindPavlovianConditioningTaskParameters = Field(description="Parameters of the task logic")

@@ -25,9 +25,9 @@
         <Property Name="SessionPath" />
       </Expression>
       <Expression xsi:type="IncludeWorkflow" Path="AllenNeuralDynamics.Core:ReadSchemas.bonsai">
-        <TaskLogicPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\local\AindPavlovianConitioningTaskLogic.json</TaskLogicPath>
-        <RigPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\local\AindPavlovianConditioningRig.json</RigPath>
-        <SessionPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\local\AindBehaviorSessionModel.json</SessionPath>
+        <TaskLogicPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\scripts\..\local\AindPavlovianConditioningTaskLogic.json</TaskLogicPath>
+        <RigPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\scripts\..\local\AindPavlovianConditioningRig.json</RigPath>
+        <SessionPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\scripts\..\local\AindBehaviorSessionModel.json</SessionPath>
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>LoadSchemas</Name>
@@ -161,7 +161,7 @@
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="AllenNeuralDynamics.Core:GenerateRootLoggingPathFromSession.bonsai">
               <RootFolder>C:/Users/neurogears/source/repos/AllenNeuralDynamics/PavlovianCond_Bonsai/temp_data</RootFolder>
-              <SessionName>test_2025-11-24T232614Z</SessionName>
+              <SessionName>test_2025-12-03T160743Z</SessionName>
               <SubjectName>LoggingRootPath</SubjectName>
             </Expression>
           </Nodes>
@@ -957,7 +957,7 @@
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="rx:Timer">
-                                  <rx:DueTime>PT5.236S</rx:DueTime>
+                                  <rx:DueTime>PT3.695S</rx:DueTime>
                                 </Combinator>
                               </Expression>
                               <Expression xsi:type="Combinator">
@@ -1303,7 +1303,7 @@
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:RepeatCount">
-                      <rx:Count>8</rx:Count>
+                      <rx:Count>6</rx:Count>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
@@ -2892,6 +2892,15 @@ groupMasks:
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="p7:CastToTrialDefinition" />
       </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>EndExperiment</Name>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Take">
+          <rx:Count>1</rx:Count>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="WorkflowOutput" />
     </Nodes>
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
@@ -2926,6 +2935,8 @@ groupMasks:
       <Edge From="36" To="37" Label="Source5" />
       <Edge From="38" To="39" Label="Source1" />
       <Edge From="39" To="40" Label="Source1" />
+      <Edge From="41" To="42" Label="Source1" />
+      <Edge From="42" To="43" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>

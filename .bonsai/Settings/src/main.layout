@@ -6,8 +6,8 @@
       <Y>-1209</Y>
     </Location>
     <Size>
-      <Width>254</Width>
-      <Height>233</Height>
+      <Width>591</Width>
+      <Height>467</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Gui.TableLayoutPanelVisualizer</VisualizerTypeName>
     <VisualizerSettings>
@@ -44,6 +44,20 @@
     <Size>
       <Width>651</Width>
       <Height>283</Height>
+    </Size>
+    <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+    <VisualizerSettings>
+      <ObjectTextVisualizer />
+    </VisualizerSettings>
+  </WindowSettings>
+  <WindowSettings Index="41">
+    <Location>
+      <X>1269</X>
+      <Y>-1155</Y>
+    </Location>
+    <Size>
+      <Width>334</Width>
+      <Height>230</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
     <VisualizerSettings>

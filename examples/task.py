@@ -8,14 +8,14 @@ from scipy.linalg import expm
 
 import aind_behavior_pavlovian_conditioning.task_logic as conditioning_task_logic
 from aind_behavior_pavlovian_conditioning.task_logic import (
-    AindPavlovianConitioningTaskLogic,
+    AindPavlovianConditioningTaskLogic,
     AindPavlovianConditioningTaskParameters,
     SoundStimulus,
     WeightedTrial,
     TrialDefinition
 )
 
-task_logic = AindPavlovianConitioningTaskLogic(
+task_logic = AindPavlovianConditioningTaskLogic(
     stage_name="test_stage",
     task_parameters=AindPavlovianConditioningTaskParameters(
         rng_seed=0,
