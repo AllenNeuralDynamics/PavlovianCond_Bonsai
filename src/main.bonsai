@@ -2671,16 +2671,20 @@ groupMasks:
           </Workflow>
         </Builder>
       </Expression>
-      <Expression xsi:type="SubscribeSubject">
-        <Name>EndExperiment</Name>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="SubscribeSubject">
+          <Name>EndExperiment</Name>
+        </Builder>
       </Expression>
       <Expression xsi:type="Disable">
         <Builder xsi:type="Combinator">
           <Combinator xsi:type="rx:TakeUntil" />
         </Builder>
       </Expression>
-      <Expression xsi:type="SubscribeSubject">
-        <Name>StartLogging</Name>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="SubscribeSubject">
+          <Name>StartLogging</Name>
+        </Builder>
       </Expression>
       <Expression xsi:type="Disable">
         <Builder xsi:type="Combinator">
