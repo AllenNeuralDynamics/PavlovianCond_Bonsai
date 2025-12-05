@@ -14,16 +14,16 @@ video_writer = rig.cameras.VideoWriterFfmpeg(frame_rate=60, container_extension=
 
 rig = AindPavlovianConditioningRig(
     rig_name="test_rig",
-    harp_behavior=HarpBehavior(port_name="COM4"),
-    harp_sound_card=HarpSoundCard(port_name="COM8"),
+    harp_behavior=HarpBehavior(port_name="COM6"),
+    harp_sound_card=HarpSoundCard(port_name="COM11"),
     triggered_camera_controller=rig.cameras.CameraController[rig.cameras.SpinnakerCamera](
         frame_rate=60,
         cameras={
             "FaceCamera": rig.cameras.SpinnakerCamera(
-                serial_number="SerialNumber", binning=1, exposure=5000, gain=0, video_writer=video_writer
+                serial_number="23022715", binning=1, exposure=5000, gain=0, video_writer=video_writer
             ),
             "BodyCamera": rig.cameras.SpinnakerCamera(
-                serial_number="SerialNumber", binning=1, exposure=5000, gain=0, video_writer=video_writer
+                serial_number="22511925", binning=1, exposure=5000, gain=0, video_writer=video_writer
             )
         }
     )

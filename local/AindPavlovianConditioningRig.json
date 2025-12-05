@@ -1,7 +1,7 @@
 {
   "aind_behavior_services_pkg_version": "0.12.3",
   "version": "0.0.1",
-  "computer_name": "LAPTOP-BL7E76C1",
+  "computer_name": "W10DT714668",
   "rig_name": "test_rig",
   "harp_behavior": {
     "device_type": "Behavior",
@@ -10,7 +10,7 @@
     "calibration": null,
     "who_am_i": 1216,
     "serial_number": null,
-    "port_name": "COM4"
+    "port_name": "COM6"
   },
   "harp_sound_card": {
     "device_type": "SoundCard",
@@ -19,7 +19,7 @@
     "calibration": null,
     "who_am_i": 1280,
     "serial_number": null,
-    "port_name": "COM8"
+    "port_name": "COM11"
   },
   "triggered_camera_controller": {
     "device_type": "CameraController",
@@ -32,7 +32,7 @@
         "name": "SpinnakerCamera",
         "additional_settings": null,
         "calibration": null,
-        "serial_number": "SerialNumber",
+        "serial_number": "23022715",
         "binning": 1,
         "color_processing": "Default",
         "exposure": 5000,
@@ -59,7 +59,7 @@
         "name": "SpinnakerCamera",
         "additional_settings": null,
         "calibration": null,
-        "serial_number": "SerialNumber",
+        "serial_number": "22511925",
         "binning": 1,
         "color_processing": "Default",
         "exposure": 5000,
