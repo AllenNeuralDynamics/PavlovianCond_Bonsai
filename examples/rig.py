@@ -17,7 +17,7 @@ rig = AindPavlovianConditioningRig(
     harp_behavior=HarpBehavior(port_name="COM4"),
     harp_sound_card=HarpSoundCard(port_name="COM11"),
     triggered_camera_controller=rig.cameras.CameraController[rig.cameras.SpinnakerCamera](
-        frame_rate=60,
+        frame_rate=30,
         cameras={
             "FaceCamera": rig.cameras.SpinnakerCamera(
                 serial_number="21196927", binning=1, exposure=5000, gain=0, video_writer=video_writer
