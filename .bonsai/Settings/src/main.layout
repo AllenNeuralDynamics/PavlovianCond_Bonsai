@@ -1,17 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VisualizerLayout Version="2.9.0">
   <WindowSettings Index="37">
+    <Visible>false</Visible>
     <Location>
-      <X>620</X>
-      <Y>-1209</Y>
+      <X>144</X>
+      <Y>156</Y>
     </Location>
     <Size>
-      <Width>591</Width>
-      <Height>467</Height>
+      <Width>254</Width>
+      <Height>233</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Gui.TableLayoutPanelVisualizer</VisualizerTypeName>
     <VisualizerSettings>
       <TableLayoutPanelVisualizer>
+        <MashupSettings>
+          <Source>22</Source>
+          <VisualizerTypeName>AllenNeuralDynamics.Core.Design.IplImageRotateVisualizer</VisualizerTypeName>
+          <VisualizerSettings>
+            <IplImageRotateVisualizer>
+              <InvertHorizontal>false</InvertHorizontal>
+              <InvertVertical>false</InvertVertical>
+              <RotateAngle>0</RotateAngle>
+            </IplImageRotateVisualizer>
+          </VisualizerSettings>
+        </MashupSettings>
+        <MashupSettings>
+          <Source>27</Source>
+          <VisualizerTypeName>AllenNeuralDynamics.Core.Design.IplImageRotateVisualizer</VisualizerTypeName>
+          <VisualizerSettings>
+            <IplImageRotateVisualizer>
+              <InvertHorizontal>false</InvertHorizontal>
+              <InvertVertical>false</InvertVertical>
+              <RotateAngle>0</RotateAngle>
+            </IplImageRotateVisualizer>
+          </VisualizerSettings>
+        </MashupSettings>
         <MashupSettings>
           <Source>29</Source>
           <VisualizerTypeName>Bonsai.Gui.ButtonVisualizer</VisualizerTypeName>
@@ -38,12 +61,12 @@
   </WindowSettings>
   <WindowSettings Index="40">
     <Location>
-      <X>-53</X>
-      <Y>-1176</Y>
+      <X>24</X>
+      <Y>26</Y>
     </Location>
     <Size>
-      <Width>651</Width>
-      <Height>283</Height>
+      <Width>334</Width>
+      <Height>64</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
     <VisualizerSettings>
@@ -52,12 +75,12 @@
   </WindowSettings>
   <WindowSettings Index="41">
     <Location>
-      <X>1269</X>
-      <Y>-1155</Y>
+      <X>48</X>
+      <Y>52</Y>
     </Location>
     <Size>
       <Width>334</Width>
-      <Height>230</Height>
+      <Height>64</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
     <VisualizerSettings>

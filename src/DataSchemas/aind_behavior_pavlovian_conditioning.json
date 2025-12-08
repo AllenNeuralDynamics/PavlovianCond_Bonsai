@@ -164,6 +164,52 @@
       "title": "AindPavlovianConditioningRig",
       "type": "object"
     },
+    "AindPavlovianConditioningTaskLogic": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "const": "AindPavlovianConditioning",
+          "default": "AindPavlovianConditioning",
+          "description": "Name of the task logic",
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "description": "Description of the task.",
+          "title": "Description",
+          "type": "string"
+        },
+        "task_parameters": {
+          "$ref": "#/$defs/AindPavlovianConditioningTaskParameters",
+          "description": "Parameters of the task logic"
+        },
+        "version": {
+          "const": "0.0.1",
+          "default": "0.0.1",
+          "title": "Version",
+          "type": "string"
+        },
+        "stage_name": {
+          "default": null,
+          "description": "Optional stage name the `Task` object instance represents.",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Stage Name"
+        }
+      },
+      "required": [
+        "task_parameters"
+      ],
+      "title": "AindPavlovianConditioningTaskLogic",
+      "type": "object"
+    },
     "AindPavlovianConditioningTaskParameters": {
       "additionalProperties": true,
       "properties": {
@@ -210,52 +256,6 @@
         "reward_delay"
       ],
       "title": "AindPavlovianConditioningTaskParameters",
-      "type": "object"
-    },
-    "AindPavlovianConitioningTaskLogic": {
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "const": "AindPavlovianConditioning",
-          "default": "AindPavlovianConditioning",
-          "description": "Name of the task logic",
-          "title": "Name",
-          "type": "string"
-        },
-        "description": {
-          "default": "",
-          "description": "Description of the task.",
-          "title": "Description",
-          "type": "string"
-        },
-        "task_parameters": {
-          "$ref": "#/$defs/AindPavlovianConditioningTaskParameters",
-          "description": "Parameters of the task logic"
-        },
-        "version": {
-          "const": "0.0.1",
-          "default": "0.0.1",
-          "title": "Version",
-          "type": "string"
-        },
-        "stage_name": {
-          "default": null,
-          "description": "Optional stage name the `Task` object instance represents.",
-          "oneOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Stage Name"
-        }
-      },
-      "required": [
-        "task_parameters"
-      ],
-      "title": "AindPavlovianConitioningTaskLogic",
       "type": "object"
     },
     "BaseModel": {

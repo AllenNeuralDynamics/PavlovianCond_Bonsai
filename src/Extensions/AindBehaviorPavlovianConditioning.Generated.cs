@@ -521,6 +521,156 @@ namespace AindPavlovianConditioningDataSchema
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
     [Bonsai.CombinatorAttribute(MethodName="Generate")]
+    public partial class AindPavlovianConditioningTaskLogic
+    {
+    
+        private string _name;
+    
+        private string _description;
+    
+        private AindPavlovianConditioningTaskParameters _taskParameters;
+    
+        private string _version;
+    
+        private string _stageName;
+    
+        public AindPavlovianConditioningTaskLogic()
+        {
+            _name = "AindPavlovianConditioning";
+            _description = "";
+            _taskParameters = new AindPavlovianConditioningTaskParameters();
+            _version = "0.0.1";
+        }
+    
+        protected AindPavlovianConditioningTaskLogic(AindPavlovianConditioningTaskLogic other)
+        {
+            _name = other._name;
+            _description = other._description;
+            _taskParameters = other._taskParameters;
+            _version = other._version;
+            _stageName = other._stageName;
+        }
+    
+        /// <summary>
+        /// Name of the task logic
+        /// </summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("name")]
+        [System.ComponentModel.DescriptionAttribute("Name of the task logic")]
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+    
+        /// <summary>
+        /// Description of the task.
+        /// </summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        [System.ComponentModel.DescriptionAttribute("Description of the task.")]
+        public string Description
+        {
+            get
+            {
+                return _description;
+            }
+            set
+            {
+                _description = value;
+            }
+        }
+    
+        /// <summary>
+        /// Parameters of the task logic
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Newtonsoft.Json.JsonPropertyAttribute("task_parameters", Required=Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DescriptionAttribute("Parameters of the task logic")]
+        public AindPavlovianConditioningTaskParameters TaskParameters
+        {
+            get
+            {
+                return _taskParameters;
+            }
+            set
+            {
+                _taskParameters = value;
+            }
+        }
+    
+        [Newtonsoft.Json.JsonPropertyAttribute("version")]
+        public string Version
+        {
+            get
+            {
+                return _version;
+            }
+            set
+            {
+                _version = value;
+            }
+        }
+    
+        /// <summary>
+        /// Optional stage name the `Task` object instance represents.
+        /// </summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("stage_name")]
+        [System.ComponentModel.DescriptionAttribute("Optional stage name the `Task` object instance represents.")]
+        public string StageName
+        {
+            get
+            {
+                return _stageName;
+            }
+            set
+            {
+                _stageName = value;
+            }
+        }
+    
+        public System.IObservable<AindPavlovianConditioningTaskLogic> Generate()
+        {
+            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new AindPavlovianConditioningTaskLogic(this)));
+        }
+    
+        public System.IObservable<AindPavlovianConditioningTaskLogic> Generate<TSource>(System.IObservable<TSource> source)
+        {
+            return System.Reactive.Linq.Observable.Select(source, _ => new AindPavlovianConditioningTaskLogic(this));
+        }
+    
+        protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
+        {
+            stringBuilder.Append("Name = " + _name + ", ");
+            stringBuilder.Append("Description = " + _description + ", ");
+            stringBuilder.Append("TaskParameters = " + _taskParameters + ", ");
+            stringBuilder.Append("Version = " + _version + ", ");
+            stringBuilder.Append("StageName = " + _stageName);
+            return true;
+        }
+    
+        public override string ToString()
+        {
+            System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+            stringBuilder.Append(GetType().Name);
+            stringBuilder.Append(" { ");
+            if (PrintMembers(stringBuilder))
+            {
+                stringBuilder.Append(" ");
+            }
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
+        }
+    }
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
+    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
+    [Bonsai.CombinatorAttribute(MethodName="Generate")]
     public partial class AindPavlovianConditioningTaskParameters
     {
     
@@ -655,156 +805,6 @@ namespace AindPavlovianConditioningDataSchema
             stringBuilder.Append("MinIti = " + _minIti + ", ");
             stringBuilder.Append("RewardDelay = " + _rewardDelay + ", ");
             stringBuilder.Append("RewardSize = " + _rewardSize);
-            return true;
-        }
-    
-        public override string ToString()
-        {
-            System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
-            stringBuilder.Append(GetType().Name);
-            stringBuilder.Append(" { ");
-            if (PrintMembers(stringBuilder))
-            {
-                stringBuilder.Append(" ");
-            }
-            stringBuilder.Append("}");
-            return stringBuilder.ToString();
-        }
-    }
-
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.6.1.0 (Newtonsoft.Json v13.0.0.0)")]
-    [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
-    [Bonsai.CombinatorAttribute(MethodName="Generate")]
-    public partial class AindPavlovianConitioningTaskLogic
-    {
-    
-        private string _name;
-    
-        private string _description;
-    
-        private AindPavlovianConditioningTaskParameters _taskParameters;
-    
-        private string _version;
-    
-        private string _stageName;
-    
-        public AindPavlovianConitioningTaskLogic()
-        {
-            _name = "AindPavlovianConditioning";
-            _description = "";
-            _taskParameters = new AindPavlovianConditioningTaskParameters();
-            _version = "0.0.1";
-        }
-    
-        protected AindPavlovianConitioningTaskLogic(AindPavlovianConitioningTaskLogic other)
-        {
-            _name = other._name;
-            _description = other._description;
-            _taskParameters = other._taskParameters;
-            _version = other._version;
-            _stageName = other._stageName;
-        }
-    
-        /// <summary>
-        /// Name of the task logic
-        /// </summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("name")]
-        [System.ComponentModel.DescriptionAttribute("Name of the task logic")]
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-    
-        /// <summary>
-        /// Description of the task.
-        /// </summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("description")]
-        [System.ComponentModel.DescriptionAttribute("Description of the task.")]
-        public string Description
-        {
-            get
-            {
-                return _description;
-            }
-            set
-            {
-                _description = value;
-            }
-        }
-    
-        /// <summary>
-        /// Parameters of the task logic
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [Newtonsoft.Json.JsonPropertyAttribute("task_parameters", Required=Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DescriptionAttribute("Parameters of the task logic")]
-        public AindPavlovianConditioningTaskParameters TaskParameters
-        {
-            get
-            {
-                return _taskParameters;
-            }
-            set
-            {
-                _taskParameters = value;
-            }
-        }
-    
-        [Newtonsoft.Json.JsonPropertyAttribute("version")]
-        public string Version
-        {
-            get
-            {
-                return _version;
-            }
-            set
-            {
-                _version = value;
-            }
-        }
-    
-        /// <summary>
-        /// Optional stage name the `Task` object instance represents.
-        /// </summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("stage_name")]
-        [System.ComponentModel.DescriptionAttribute("Optional stage name the `Task` object instance represents.")]
-        public string StageName
-        {
-            get
-            {
-                return _stageName;
-            }
-            set
-            {
-                _stageName = value;
-            }
-        }
-    
-        public System.IObservable<AindPavlovianConitioningTaskLogic> Generate()
-        {
-            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new AindPavlovianConitioningTaskLogic(this)));
-        }
-    
-        public System.IObservable<AindPavlovianConitioningTaskLogic> Generate<TSource>(System.IObservable<TSource> source)
-        {
-            return System.Reactive.Linq.Observable.Select(source, _ => new AindPavlovianConitioningTaskLogic(this));
-        }
-    
-        protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
-        {
-            stringBuilder.Append("Name = " + _name + ", ");
-            stringBuilder.Append("Description = " + _description + ", ");
-            stringBuilder.Append("TaskParameters = " + _taskParameters + ", ");
-            stringBuilder.Append("Version = " + _version + ", ");
-            stringBuilder.Append("StageName = " + _stageName);
             return true;
         }
     
@@ -6177,14 +6177,14 @@ namespace AindPavlovianConditioningDataSchema
             return Process<AindPavlovianConditioningRig>(source);
         }
 
+        public System.IObservable<string> Process(System.IObservable<AindPavlovianConditioningTaskLogic> source)
+        {
+            return Process<AindPavlovianConditioningTaskLogic>(source);
+        }
+
         public System.IObservable<string> Process(System.IObservable<AindPavlovianConditioningTaskParameters> source)
         {
             return Process<AindPavlovianConditioningTaskParameters>(source);
-        }
-
-        public System.IObservable<string> Process(System.IObservable<AindPavlovianConitioningTaskLogic> source)
-        {
-            return Process<AindPavlovianConitioningTaskLogic>(source);
         }
 
         public System.IObservable<string> Process(System.IObservable<BaseModel> source)
@@ -6408,8 +6408,8 @@ namespace AindPavlovianConditioningDataSchema
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Transform)]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<AindBehaviorSessionModel>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<AindPavlovianConditioningRig>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<AindPavlovianConditioningTaskLogic>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<AindPavlovianConditioningTaskParameters>))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<AindPavlovianConitioningTaskLogic>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<BaseModel>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<BetaDistribution>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<BetaDistributionParameters>))]

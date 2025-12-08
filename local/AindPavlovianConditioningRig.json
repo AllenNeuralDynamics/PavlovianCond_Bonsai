@@ -1,7 +1,7 @@
 {
   "aind_behavior_services_pkg_version": "0.12.3",
   "version": "0.0.1",
-  "computer_name": "W10DT714668",
+  "computer_name": "LAPTOP-BL7E76C1",
   "rig_name": "test_rig",
   "harp_behavior": {
     "device_type": "Behavior",
@@ -10,7 +10,7 @@
     "calibration": null,
     "who_am_i": 1216,
     "serial_number": null,
-    "port_name": "COM6"
+    "port_name": "COM4"
   },
   "harp_sound_card": {
     "device_type": "SoundCard",
@@ -32,34 +32,7 @@
         "name": "SpinnakerCamera",
         "additional_settings": null,
         "calibration": null,
-        "serial_number": "23022715",
-        "binning": 1,
-        "color_processing": "Default",
-        "exposure": 5000,
-        "gain": 0.0,
-        "gamma": null,
-        "adc_bit_depth": 0,
-        "pixel_format": 0,
-        "region_of_interest": {
-          "x": 0,
-          "y": 0,
-          "width": 0,
-          "height": 0
-        },
-        "video_writer": {
-          "video_writer_type": "FFMPEG",
-          "frame_rate": 60,
-          "container_extension": "mp4",
-          "output_arguments": "-vf \"scale=out_color_matrix=bt709:out_range=full,format=bgr24,scale=out_range=full\" -c:v h264_nvenc -pix_fmt yuv420p -color_range full -colorspace bt709 -color_trc linear -tune hq -preset p4 -rc vbr -cq 12 -b:v 0M -metadata author=\"Allen Institute for Neural Dynamics\" -maxrate 700M -bufsize 350M",
-          "input_arguments": "-colorspace bt709 -color_primaries bt709 -color_range full -color_trc linear"
-        }
-      },
-      "BodyCamera": {
-        "device_type": "SpinnakerCamera",
-        "name": "SpinnakerCamera",
-        "additional_settings": null,
-        "calibration": null,
-        "serial_number": "22511925",
+        "serial_number": "21196927",
         "binning": 1,
         "color_processing": "Default",
         "exposure": 5000,

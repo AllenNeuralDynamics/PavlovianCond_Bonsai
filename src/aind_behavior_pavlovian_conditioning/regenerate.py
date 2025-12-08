@@ -15,7 +15,7 @@ NAMESPACE_PREFIX = "AindPavlovianConditioningDataSchema"
 
 def main():
     models = [
-        aind_behavior_pavlovian_conditioning.task_logic.AindPavlovianConitioningTaskLogic,
+        aind_behavior_pavlovian_conditioning.task_logic.AindPavlovianConditioningTaskLogic,
         aind_behavior_pavlovian_conditioning.rig.AindPavlovianConditioningRig,
         AindBehaviorSessionModel,
     ]
