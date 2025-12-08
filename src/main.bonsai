@@ -25,9 +25,9 @@
         <Property Name="SessionPath" />
       </Expression>
       <Expression xsi:type="IncludeWorkflow" Path="AllenNeuralDynamics.Core:ReadSchemas.bonsai">
-        <TaskLogicPath>C:\Users\svc_aind_behavior\Documents\GitHub\PavlovianCond_Bonsai\local\AindPavlovianConditioningTaskLogic.json</TaskLogicPath>
-        <RigPath>C:\Users\svc_aind_behavior\Documents\GitHub\PavlovianCond_Bonsai\local\AindPavlovianConditioningRig.json</RigPath>
-        <SessionPath>C:\Users\svc_aind_behavior\Documents\GitHub\PavlovianCond_Bonsai\local\AindBehaviorSessionModel.json</SessionPath>
+        <TaskLogicPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\local\AindPavlovianConditioningTaskLogic.json</TaskLogicPath>
+        <RigPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\local\AindPavlovianConditioningRig.json</RigPath>
+        <SessionPath>C:\Users\neurogears\source\repos\AllenNeuralDynamics\PavlovianCond_Bonsai\local\AindBehaviorSessionModel.json</SessionPath>
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>LoadSchemas</Name>
@@ -65,7 +65,7 @@
               <Name>RawTaskLogicSchema</Name>
             </Expression>
             <Expression xsi:type="p1:DeserializeFromJson">
-              <p1:Type xsi:type="TypeMapping" TypeArguments="p1:AindPavlovianConitioningTaskLogic" />
+              <p1:Type xsi:type="TypeMapping" TypeArguments="p1:AindPavlovianConditioningTaskLogic" />
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Take">
@@ -126,12 +126,18 @@
             <Expression xsi:type="MulticastSubject">
               <Name>CameraState</Name>
             </Expression>
+            <Expression xsi:type="Unit" />
+            <Expression xsi:type="MulticastSubject">
+              <Name>StartLogging</Name>
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="5" To="6" Label="Source1" />
             <Edge From="6" To="7" Label="Source1" />
             <Edge From="8" To="9" Label="Source1" />
             <Edge From="9" To="10" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -157,8 +163,8 @@
               </PropertyMappings>
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="AllenNeuralDynamics.Core:GenerateRootLoggingPathFromSession.bonsai">
-              <RootFolder>C:/Users/neurogears/source/repos/AllenNeuralDynamics/PavlovianCond_Bonsai/temp_data</RootFolder>
-              <SessionName>test_2025-12-03T160743Z</SessionName>
+              <RootFolder>C:/PavlovianCond_temp_data</RootFolder>
+              <SessionName>test_2025-12-08T161644Z</SessionName>
               <SubjectName>LoggingRootPath</SubjectName>
             </Expression>
           </Nodes>
@@ -380,7 +386,7 @@
                   </Expression>
                   <Expression xsi:type="beh:Format">
                     <harp:MessageType>Write</harp:MessageType>
-                    <harp:Register xsi:type="beh:Camera0Frequency" />
+                    <harp:Register xsi:type="beh:Camera1Frequency" />
                   </Expression>
                   <Expression xsi:type="MulticastSubject">
                     <Name>HarpBehaviorCommands</Name>
@@ -389,7 +395,7 @@
                     <Name>HarpBehaviorEvents</Name>
                   </Expression>
                   <Expression xsi:type="beh:Parse">
-                    <harp:Register xsi:type="beh:TimestampedCamera0Frame" />
+                    <harp:Register xsi:type="beh:TimestampedCamera1Frame" />
                   </Expression>
                   <Expression xsi:type="MemberSelector">
                     <Selector>Value</Selector>
@@ -465,14 +471,14 @@
                             <Property Name="ColorProcessing" Selector="ColorProcessing" />
                             <Property Name="Gamma" Selector="Gamma" />
                             <Property Name="PixelFormat" Selector="PixelFormat" />
-                            <Property Name="AdcBitDepth" Selector="AdcBitDepth" />
                           </PropertyMappings>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="p6:AindSpinnakerCapture">
                             <spk:Index xsi:nil="true" />
+                            <spk:SerialNumber>21196927</spk:SerialNumber>
                             <spk:ColorProcessing>Default</spk:ColorProcessing>
-                            <p6:ExposureTime>19000</p6:ExposureTime>
+                            <p6:ExposureTime>5000</p6:ExposureTime>
                             <p6:Gain>0</p6:Gain>
                             <p6:Binning>1</p6:Binning>
                             <p6:Gamma xsi:nil="true" />
@@ -970,7 +976,7 @@
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="rx:Timer">
-                                  <rx:DueTime>PT3.695S</rx:DueTime>
+                                  <rx:DueTime>PT14.705S</rx:DueTime>
                                 </Combinator>
                               </Expression>
                               <Expression xsi:type="Combinator">
@@ -1316,7 +1322,7 @@
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:RepeatCount">
-                      <rx:Count>6</rx:Count>
+                      <rx:Count>20</rx:Count>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
@@ -1901,11 +1907,14 @@ groupMasks:
               <Modality>Behavior</Modality>
               <DeviceName>Behavior</DeviceName>
             </Expression>
-            <Expression xsi:type="SubscribeSubject">
-              <Name>HarpSoundCardEvents</Name>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="SubscribeSubject">
+                <Name>HarpSoundCardEvents</Name>
+              </Builder>
             </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="AllenNeuralDynamics.HarpUtils:LogHarpDeviceWithMetadata.bonsai">
-              <DeviceMetadata>%YAML 1.1
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="IncludeWorkflow" Path="AllenNeuralDynamics.HarpUtils:LogHarpDeviceWithMetadata.bonsai">
+                <DeviceMetadata>%YAML 1.1
 ---
 # yaml-language-server: $schema=https://harp-tech.org/draft-02/schema/device.json
 device: Behavior
@@ -2421,8 +2430,9 @@ groupMasks:
     values:
       Position: 0
       Displacement: 1</DeviceMetadata>
-              <Modality>Behavior</Modality>
-              <DeviceName>SoundCard</DeviceName>
+                <Modality>Behavior</Modality>
+                <DeviceName>SoundCard</DeviceName>
+              </Builder>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
               <Name>SubjectSchema</Name>
@@ -2625,10 +2635,10 @@ groupMasks:
                     <Modality>BehaviorVideos</Modality>
                     <LogName>FaceCamera</LogName>
                     <VideoExtension>mp4</VideoExtension>
-                    <OutputArguments>-vf "scale=out_color_matrix=bt709:out_range=full" -c:v h264_nvenc -pix_fmt nv12 -color_range full -colorspace bt709 -color_trc linear -tune hq -preset p4 -rc vbr -cq 12 -b:v 0M -maxrate 700M -bufsize 350M</OutputArguments>
-                    <InputArguments>-colorspace rgb -color_primaries bt709 -color_trc linear</InputArguments>
+                    <OutputArguments>-vf "scale=out_color_matrix=bt709:out_range=full,format=bgr24,scale=out_range=full" -c:v h264_nvenc -pix_fmt yuv420p -color_range full -colorspace bt709 -color_trc linear -tune hq -preset p4 -rc vbr -cq 12 -b:v 0M -metadata author="Allen Institute for Neural Dynamics" -maxrate 700M -bufsize 350M</OutputArguments>
+                    <InputArguments>-colorspace bt709 -color_primaries bt709 -color_range full -color_trc linear</InputArguments>
                     <Verbosity>Verbose</Verbosity>
-                    <FrameRate>0</FrameRate>
+                    <FrameRate>60</FrameRate>
                   </Expression>
                 </Nodes>
                 <Edges>
@@ -2860,10 +2870,12 @@ groupMasks:
         <gui:Enabled>true</gui:Enabled>
         <gui:Visible>true</gui:Visible>
         <gui:ColumnCount>2</gui:ColumnCount>
-        <gui:RowCount>2</gui:RowCount>
+        <gui:RowCount>3</gui:RowCount>
         <gui:ColumnStyles />
         <gui:RowStyles />
         <gui:CellSpans>
+          <gui:CellSpan ColumnSpan="1" RowSpan="1" />
+          <gui:CellSpan ColumnSpan="1" RowSpan="1" />
           <gui:CellSpan ColumnSpan="1" RowSpan="1" />
           <gui:CellSpan ColumnSpan="1" RowSpan="1" />
           <gui:CellSpan ColumnSpan="2" RowSpan="1" />
