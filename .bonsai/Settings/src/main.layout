@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VisualizerLayout Version="2.9.0">
   <WindowSettings Index="37">
-    <Visible>false</Visible>
     <Location>
-      <X>144</X>
-      <Y>156</Y>
+      <X>712</X>
+      <Y>141</Y>
     </Location>
     <Size>
-      <Width>254</Width>
-      <Height>233</Height>
+      <Width>591</Width>
+      <Height>523</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Gui.TableLayoutPanelVisualizer</VisualizerTypeName>
     <VisualizerSettings>
@@ -60,13 +59,14 @@
     </VisualizerSettings>
   </WindowSettings>
   <WindowSettings Index="40">
+    <Visible>false</Visible>
     <Location>
-      <X>24</X>
-      <Y>26</Y>
+      <X>44</X>
+      <Y>69</Y>
     </Location>
     <Size>
-      <Width>334</Width>
-      <Height>64</Height>
+      <Width>471</Width>
+      <Height>197</Height>
     </Size>
     <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
     <VisualizerSettings>
@@ -74,9 +74,10 @@
     </VisualizerSettings>
   </WindowSettings>
   <WindowSettings Index="41">
+    <Visible>false</Visible>
     <Location>
-      <X>48</X>
-      <Y>52</Y>
+      <X>442</X>
+      <Y>32</Y>
     </Location>
     <Size>
       <Width>334</Width>

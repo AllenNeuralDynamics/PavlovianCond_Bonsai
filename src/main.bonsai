@@ -499,7 +499,7 @@
                               <p6:Width>0</p6:Width>
                               <p6:Height>0</p6:Height>
                             </p6:RegionOfInterest>
-                            <p6:AdcBitDepth>Bit8</p6:AdcBitDepth>
+                            <p6:AdcBitDepth xsi:nil="true" />
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="SubscribeSubject">
@@ -996,7 +996,7 @@
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="rx:Timer">
-                                  <rx:DueTime>PT3.695S</rx:DueTime>
+                                  <rx:DueTime>PT3.12S</rx:DueTime>
                                 </Combinator>
                               </Expression>
                               <Expression xsi:type="Combinator">
@@ -1344,7 +1344,7 @@
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:RepeatCount">
-                      <rx:Count>6</rx:Count>
+                      <rx:Count>12</rx:Count>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
@@ -2892,10 +2892,12 @@ groupMasks:
         <gui:Enabled>true</gui:Enabled>
         <gui:Visible>true</gui:Visible>
         <gui:ColumnCount>2</gui:ColumnCount>
-        <gui:RowCount>2</gui:RowCount>
+        <gui:RowCount>3</gui:RowCount>
         <gui:ColumnStyles />
         <gui:RowStyles />
         <gui:CellSpans>
+          <gui:CellSpan ColumnSpan="1" RowSpan="1" />
+          <gui:CellSpan ColumnSpan="1" RowSpan="1" />
           <gui:CellSpan ColumnSpan="1" RowSpan="1" />
           <gui:CellSpan ColumnSpan="1" RowSpan="1" />
           <gui:CellSpan ColumnSpan="2" RowSpan="1" />
